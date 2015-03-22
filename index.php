@@ -13,8 +13,6 @@
 
 <div class="content">
 
-
-
     <div class="couille">
         <p class="ui">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -22,8 +20,6 @@
     </div>
 
 </div>
-
-
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
