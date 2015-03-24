@@ -1,0 +1,77 @@
+%vmiddle_parent{
+  @include transform-style(preserve-3d);
+}
+%vmiddle_child{
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+// VMIDDLE
+// vertically align child in parent (ie9+)
+// .parent{
+//   @extend vmiddle(child)
+// }
+@mixin vmiddle($child : 'p') {
+    @include transform-style(preserve-3d);
+    @if $child == (p or span or div or h1 or h2 or h3 or h4 or h5 or h6 or strong or em or i){
+        #{$child} {
+          position: relative;
+          top: 50%;
+          @include transform(translateY(-50%));
+        }
+    } @else {
+        .#{$child} {
+          position: relative;
+          top: 50%;
+          @include transform(translateY(-50%));
+        } 
+    }
+}
+
+// HOVER
+// Wraps your rules in :hover and :focus states
+// .link {
+//   color: #fff ;
+//   @include hover{color : #000;}
+// }
+@mixin hover {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+// BORDER-SANDWICH
+// Creates top and bottom border on one or a group of elements (ie9+)
+// Set the $breadless to true to remove outer borders
+@mixin border-sandwich($border, $breadless: false) {
+  @if ($breadless) {
+    &:not(:first-of-type) { 
+      border-top: $border;
+    }
+  } @else {
+    border-bottom: $border;
+    &:first-of-type {
+      border-top: $border;
+    }
+  }
+}
+
+
+// Readable media queries
+@mixin media-max($end) {
+  @media screen and (max-width: ($end - 1)) {
+    @content;
+  }
+}
+@mixin media-between($start, $end) {
+  @media screen and (min-width: $start) and (max-width: ($end - 1)) {
+    @content;
+  }
+}
+@mixin media-min($start) {
+  @media screen and (min-width: $start) {
+    @content;
+  }
+}

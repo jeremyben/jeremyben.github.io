@@ -1,32 +1,14 @@
-@import "normalize/normalize";
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@import "base/normalize/normalize";
 @import "bourbon/bourbon";
-// @import "grid-settings";
 @import "base/grid-settings";
 @import "neat/neat";
 @import "base/base";
-@import "sass-easing";
-@import "my-mixins";
+@import "animations/animations";
 
-// generate margins
-$m : 5;
-@while $m < 51 {
-    .mt-#{$m} { margin-top: 1px * $m; }
-    .mb-#{$m} { margin-bottom: 1px * $m; }
-    .ml-#{$m} { margin-left: 1px * $m; }
-    .mr-#{$m} { margin-right: 1px * $m; }
-    $m : $m + 5;
-}
-
-// generate padding
-$p : 5;
-@while $p < 51 {
-    .pt-#{$p} { padding-top: 1px * $p; }
-    .pb-#{$p} { padding-bottom: 1px * $p; }
-    .pl-#{$p} { padding-left: 1px * $p; }
-    .pr-#{$p} { padding-right: 1px * $p; }
-    .padding-#{$p} { padding: 1px * $p; }
-    $p : $p + 5;
-}
+@import "helpers";
+@import "svg";
 
 html, body{
     height: 100%;
@@ -34,13 +16,52 @@ html, body{
 
 .content{
     @include outer-container;
+    // @include pad(0 default);
+
+    .intro{
+
+        @include span-columns(12);
+        @include media($large-screen-up) {
+            @include span-columns(4);
+        }
+        @extend %panel;
+    }
+
+    .couille{
+        @include span-columns(12);
+        // @include shift(1);
+        // @include omega();
+        @extend %panel;
+        height: 200px;
+        overflow: hidden;
+        
+        .ui{
+            @include span-columns(4 of 12);
+        }
+        .lol{
+            @include span-columns(4 of 12);
+        }
+        .rofl{
+            @include span-columns(4 of 12);
+        }
+
+        @include media($large-screen-up) {
+            @include vmiddle(p);
+            @include span-columns(10);
+            .ui{
+                @include span-columns(4 of 10);
+            }
+            .lol{
+                @include span-columns(4 of 10);
+            }
+            .rofl{
+                @include span-columns(2 of 10);
+            }
+        }
+
+        
+    }
+
+    
 }
 
-.video-wrapper{
-    @extend %video_wrapper;
-}
-
-.couille{
-    height: 200px;
-    @include vmiddle(ui);
-}

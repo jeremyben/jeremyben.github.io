@@ -1,0 +1,7 @@
+// GRAY function
+// Outputs gray colours based on percentage of lightness.
+// .lightgray { color: gray(97%); } // #f7f7f7
+
+@function gray($lightness) {
+  @return hsl(0, 0%, $lightness);
+}
