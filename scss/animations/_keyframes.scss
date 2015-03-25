@@ -1,0 +1,12 @@
+@include keyframes(myAnim) {
+    0%   { 
+    	top: -0.6em;
+    	opacity: 0;
+    	@include transform(rotateX(-90deg)); 
+    }
+    100% { 
+    	top: 0;
+    	opacity: 100%;
+    	@include transform(rotateX(0deg)); 
+    }
+}

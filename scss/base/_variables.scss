@@ -16,10 +16,15 @@ $smaller-spacing: $base-spacing / 4;
 $base-z-index: 0;
 
 // Colors
-$blue: #477dca;
+$origblue: #477dca;
+$tint-origblue : tint($origblue, 70%);
+
 $dark-gray: #444;
 $medium-gray: #999;
 $light-gray: #ddd;
+
+$blue: #b0dcff;
+$brblue: #64baff;
 
 // Font Colors
 $base-background-color: #fff;

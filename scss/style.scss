@@ -10,22 +10,63 @@
 @import "helpers";
 @import "svg";
 
-html, body{
-    height: 100%;
+body{
+    background-color:#fff;
+}
+
+#bgff{
+    width:100%;
+    position:absolute;
+    top: 50px;
+    z-index:-10;
+    overflow:hidden;
+}
+.tiles{
+    fill: darken(#dec5b9, 0%);
+}
+.ceiling{
+    fill: #fff;
+}
+
+h1.logo{
+
+    font-family: 'Patrick Hand', $heading-font-family;
+    margin: 0em 0 1em;
+    // padding-top: 1px;
+    font-size: 6.5em;
+    text-align: center;
+    // color: $blue;
+    color: shade($brblue, 10%);
+    // color: #4f4f4f;
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.12);
+
+    position: relative;
+    @include transform-origin(center top);
+    
+}
+
+.myAnim{
+    @include animation(myAnim 1.25s ease-out);
 }
 
 .content{
     @include outer-container;
     // @include pad(0 default);
 
-    .intro{
+    .row{
+        @include row();
+    }
 
+    .intro{
+        
         @include span-columns(12);
         @include media($large-screen-up) {
             @include span-columns(4);
+            font-size: em(18);
         }
         @extend %panel;
     }
+
 
     .couille{
         @include span-columns(12);

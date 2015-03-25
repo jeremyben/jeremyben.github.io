@@ -10,32 +10,40 @@
     <meta name="format-detection" content="telephone=yes">
     <title>Ben.gg</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Patrick+Hand&text=ben.gg' rel='stylesheet' type='text/css'>
     <!-- add modernizer -->
 </head>
 <body>
 
-<?php include 'inline.php'; ?>
+
+<?php
+include 'inline.php';
+// echo '<img src="img/interior.svg" id="bgff" style="width:100%; height: 800px; position:absolute; top:0px; z-index:-10; overflow:hidden;"></img>';
+?>
+
+
+<h1 class="logo">ben.gg</h1>
+
+
 
 <div class="content">
 
-    <h1>Premier</h1>
-    <h2>Deuxième</h2>
-    <h3>Troisième</h3>
-    <h4>Quatrième</h4>
-    <h5>Cinquième</h5>
-    <h6>Sixième</h6>
+    <p></p>
 
-    <div class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore e cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    <div class="row">
+        <div class="intro">Bienvenue dans le fast portfolio de Ben</div>
 
-    <div class="couille">
-        <p class="ui">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitat</p>
-        <p class="lol">jlhs dlfd hlkk hfdls fg sdlkfhfd lhsdf sdfsdf uioqhldf apcncl ifjk dhjd j bj</p>
-        <p class="rofl">jlhs5 67854 5khfdls sdlkfsdf</p>
+        <!-- <div class="couille">
+            <p class="ui">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitat</p>
+            <p class="lol">jlhs dlfd hlkk hfdls fg sdlkfhfd lhsdf sdfsdf uioqhldf apcncl ifjk dhjd j bj</p>
+            <p class="rofl">jlhs5 67854 5khfdls sdlkfsdf</p>
+        </div> -->
     </div>
+    
+    
+    <img src="img/fries.svg">
 
 </div>
 
