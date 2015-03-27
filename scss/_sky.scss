@@ -1,0 +1,122 @@
+.sky{
+    @include linear-gradient(top, shade(darken($blue, 10%),10%) 0%, tint($blue, 15%) 85%, $fallback:tint($blue, 15%));
+    padding-top: 1px;
+    // height: 800px;
+    overflow: hidden;
+    position: relative;
+    @include row();
+}
+
+h1.logo{
+    font-family: 'Fredoka One', $heading-font-family;
+    margin: 0.25em auto 0.8em;
+    font-size: 11em;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.12);
+    // color: $blue;
+    // color: shade($brblue, 10%);
+    color: #fff;
+    width: 90%;
+    white-space: nowrap;
+    // @include transform-style(preserve-3d);
+    // @include backface-visibility(hidden);
+    // @include perspective(1000);
+    // @include transform(translate3d(0,0,0));
+    span{
+        position: relative;
+        // top: 0.2em;
+        font-size: 0.65em;
+        &:first-child{
+            // padding: 0 0.5em;
+            font-size: 0.3em;
+        }
+    } 
+}
+
+.cloud{
+    width: em(290);
+    height: em(100);
+    background: #fff;
+    border-radius: em(100);
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center; 
+    padding: em(32) em(25);
+    margin-bottom: 4em;
+    color: #777;
+    font-size: em(18);
+    z-index: 1;
+    // @include animation(cloud 4s linear);
+
+    > p{
+        font-size: em(20);
+        margin: 0;
+    }
+    &:after,&:before {
+        border-radius: em(100);
+        background: #fff;
+        content: '';
+        position: absolute;
+        z-index: -1;
+    }
+    &:after{ 
+        width: em(90);  
+        height: em(90);
+        left: em(46);
+        top: em(-40);
+    }
+    &:before{
+        width: em(145);
+        height: em(145);
+        right: em(46);
+        top: em(-60);
+    }
+
+    &-small{
+        z-index: 2;
+        width: em(280);
+        margin-bottom: 3em;
+        font-size: em(12);
+        // color: #888;
+        >p{
+            font-size: em(26);
+            line-height: 1;
+        }
+    }
+    &-smaller{
+        z-index: 2;
+        width: em(275);
+        margin-bottom: 3em;
+        font-size: em(8);
+        >p{
+            font-size: em(36);
+            line-height: 1;
+        }
+    }
+
+    &#patron{
+        position: absolute;
+        z-index: 0;
+        opacity: 0;
+        box-shadow: none;
+        display: none;
+        left: 20%;
+    }
+    
+    // &:hover {
+    //     >p{
+    //         font-size: 4em;
+    //         font-weight: 700;
+    //         font-variant: small-caps;
+    //     }
+    //     background: none;
+    //     white-space: nowrap;
+    //     box-shadow: none; 
+    //     &:after, &:before{
+    //         background: none;
+    //     }
+    // }
+
+
+}

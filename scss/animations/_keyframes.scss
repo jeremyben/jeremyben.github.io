@@ -1,12 +1,72 @@
-@include keyframes(myAnim) {
-    0%   { 
-    	top: -0.6em;
+@include keyframes(cloud) {
+    0% { 
     	opacity: 0;
-    	@include transform(rotateX(-90deg)); 
+        @include transform(translateX(0%)); 
+    }
+    20% {
+        opacity: 1;
+    }
+    50% { 
+        @include transform(translateX(100%)); 
     }
     100% { 
-    	top: 0;
-    	opacity: 100%;
-    	@include transform(rotateX(0deg)); 
+        @include transform(translateX(0%)); 
+    }
+}
+
+@include keyframes(bg-cloud) {
+    0% { 
+        opacity: 0;
+        @include transform(translateX(0%)); 
+    }
+    20% {
+        opacity: 0.25;
+    }
+    80% {
+        opacity: 0.25;
+    }
+    100% { 
+        opacity: 0;
+        @include transform(translateX(800%)); 
+    }
+}
+// @include keyframes(bg-cloud) {
+//     from { 
+//         left:0%; 
+//     }
+
+//     to { 
+//         right:0%; 
+//     }
+// }
+
+@include keyframes(logo-cloud) {
+    0% { 
+        opacity: 0;
+        @include transform(translateX(-10%)); 
+    }
+
+   100% { 
+        opacity: 1;
+        @include transform(translateX(0));
+    }
+}
+
+@include keyframes(hovering) {
+    0% { 
+        opacity: 1;
+        @include transform(translate(0, 0));
+    }
+    25% { 
+        opacity: 0.7;
+        @include transform(translate(0.25%, 4%));
+    }
+    75% {
+        opacity: 0.9;
+        @include transform(translate(-0.25%, -2%));
+    }
+    100% {
+        opacity: 1;
+        @include transform(translate(0, 0)); 
     }
 }

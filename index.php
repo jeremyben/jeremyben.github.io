@@ -10,28 +10,54 @@
     <meta name="format-detection" content="telephone=yes">
     <title>Ben.gg</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Patrick+Hand&text=ben.gg' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fredoka+One&text=ben.gjépoitFfasPrl' rel='stylesheet' type='text/css'>
+    
     <!-- add modernizer -->
 </head>
-<body>
+<body class="blue">
 
+<div class="sky">
+    <div class="container">
+        <h1 class="logo">ben<span> . </span><span>gg</span></h1>
+        <div class="cloud">
+            <p>Mon nom est Jérémy.</p>
+        </div>
+        <div class="cloud cloud-small">
+            <p>Je suis</p>
+        </div>
+        <div class="cloud">
+            <p>Développeur web <em class="text-ego">passionné</em></p>
+        </div>
+        <div class="cloud cloud-smaller">
+            <p>et</p>
+        </div>
+        <div class="cloud">
+            <p>Étudiant <em class="text-ego">brillant</em></p>
+        </div>
+        <div class="cloud">
+            <p>En école de multimédia et management.</p>
+        </div>
+        <div class="cloud">
+            <p>Jetez un coup d'oeil à mon...</p>
+        </div>
+        <div class="cloud" id="patron"></div>
+    </div>
 
+</div>
+
+<div class="svg-container">
 <?php
 include 'inline.php';
 // echo '<img src="img/interior.svg" id="bgff" style="width:100%; height: 800px; position:absolute; top:0px; z-index:-10; overflow:hidden;"></img>';
 ?>
+</div>
 
 
-<h1 class="logo">ben.gg</h1>
-
-
-
-<div class="content">
-
-    <p></p>
+<div class="fastfood">
 
     <div class="row">
-        <div class="intro">Bienvenue dans le fast portfolio de Ben</div>
+        <h2 class="enseigne"><span>Fast</span> Portfolio</h2>
 
         <!-- <div class="couille">
             <p class="ui">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -42,8 +68,10 @@ include 'inline.php';
         </div> -->
     </div>
     
+    <div class="choices">
+        <img src="img/plate.svg" id="plate">
+    </div>
     
-    <img src="img/fries.svg">
 
 </div>
 

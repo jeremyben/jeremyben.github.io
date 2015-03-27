@@ -11,15 +11,22 @@ function addEvent(el, eventName, eventHandle) {
     }
 };
 
-var bg = document.getElementById("bgff");
-var bgHeight = bg.clientHeight;
-var bgWidth = bg.getAttribute('width').replace('px', '');
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
+// Contrôle taille, position et aspect du background de la salle selon viewport.
+var bg = document.getElementById("bgff");
+var bgContainer = bg.parentNode;
+var bgHeight = bg.clientHeight;
+var bgWidth = bg.getAttribute('width').replace('px', ''); 
 function resizeBg(){
- 	if (window.innerHeight >= bgHeight){
-		bg.style.height = '100%';
+ 	if (window.innerHeight >= document.body.scrollHeight){
+        bgContainer.style.position = 'static';
+        bg.style.bottom = 0;
 	} else {
-		bg.style.height = '';
+		bgContainer.style.position = '';
+        bg.style.bottom = '';
 	}
 
 	if (window.innerWidth <= bgWidth){
@@ -31,6 +38,34 @@ function resizeBg(){
 resizeBg();
 addEvent(window, "resize", resizeBg);
 
-$('.logo').addClass('myAnim');
+// enchaînement animations logo
+var logo = $('.logo');
+logo.addClass('logo-cloud-anim');
+logo.on('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function(event) {
+    logo
+        .removeClass('logo-cloud-anim')
+        .addClass('hovering-anim')
+        .off();
+});
 
+// nuages de fond
+var bgCloud = $('#patron').detach();
+console.log(bgCloud);
+for (var i = 0; i < 10; i++) {
+    bgCloud.clone().prependTo('.sky')
+    .addClass('bg-cloud-anim-'+ getRandomInt(2,6))
+    .css({
+        'display' : 'block',
+        'font-size' : getRandomInt(3,7) + 'px',
+        'top' : getRandomInt(30,120) + '0px',
+        'left' : getRandomInt(15,30) + '%'
+    });
+};
+
+// // descend le plateau (pas utile)
+// $('.fastfood').height(bgHeight);
+// $('#plate').css({
+//         'position' : 'absolute',
+//         'bottom' : '50px'
+//     });
 });
