@@ -1,0 +1,35 @@
+.intro{
+    background-color: $yellow;
+    padding : 4em 0 5em;
+    // #bengg g{
+    //     // stroke: #444;
+    // }
+}
+
+h1.name{
+    font-family: $logo-font;
+    font-weight: 300;
+    margin: 0;
+    font-size: 7em;
+    // text-align: center;
+    // text-shadow: 2px 2px 1px rgba(0,0,0,0.12);
+    // color: $blue;
+    color: shade($yellow, 50);
+    // color: rgba(0,0,0, 0.4);
+    // color: #777;
+    // width: 90%;
+    white-space: nowrap;
+    // @include transform-style(preserve-3d);
+    // @include backface-visibility(hidden);
+    // @include perspective(1000);
+    // @include transform(translate3d(0,0,0));
+    span{
+        position: relative;
+        // top: 0.2em;
+        font-size: 0.65em;
+        &:first-child{
+            // padding: 0 0.5em;
+            font-size: 0.4em;
+        }
+    } 
+}

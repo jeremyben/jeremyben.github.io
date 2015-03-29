@@ -8,6 +8,10 @@
     @include animation(hovering 3.5s linear infinite);
 }
 
+.hovering-simple-anim{
+    @include animation(hovering-simple 3s linear infinite);
+}
+
 .cloud-anim{
     @include animation(cloud 4s linear infinite);
 }

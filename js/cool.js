@@ -15,6 +15,21 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// menu
+var menuToggle = $('#js-mobile-menu').unbind();
+$('#js-navigation-menu').removeClass("show");
+
+menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+        if($('#js-navigation-menu').is(':hidden')) {
+            $('#js-navigation-menu').removeAttr('style');
+        }
+    });
+});
+
+
+
 // Contrôle taille, position et aspect du background de la salle selon viewport.
 var bg = document.getElementById("bgff");
 var bgContainer = bg.parentNode;
@@ -38,19 +53,20 @@ function resizeBg(){
 resizeBg();
 addEvent(window, "resize", resizeBg);
 
-// enchaînement animations logo
-var logo = $('.logo');
-logo.addClass('logo-cloud-anim');
-logo.on('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function(event) {
-    logo
-        .removeClass('logo-cloud-anim')
-        .addClass('hovering-anim')
-        .off();
-});
+// // enchaînement animations logo
+// var logo = $('.name');
+// var cloud = $('.cloud');
+// logo.addClass('logo-cloud-anim');
+// logo.on('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function(e) {
+//     logo
+//         .removeClass('logo-cloud-anim')
+//         .addClass('hovering-anim')
+//         .off();
+//     // cloud.addClass('hovering-simple-anim');
+// });
 
 // nuages de fond
 var bgCloud = $('#patron').detach();
-console.log(bgCloud);
 for (var i = 0; i < 10; i++) {
     bgCloud.clone().prependTo('.sky')
     .addClass('bg-cloud-anim-'+ getRandomInt(2,6))
@@ -68,4 +84,14 @@ for (var i = 0; i < 10; i++) {
 //         'position' : 'absolute',
 //         'bottom' : '50px'
 //     });
+
+// var vivusCB = function(){
+//     var bengg = document.getElementById("bengg");
+//     var text = document.getElementById("benggText");
+//     bengg.parentNode.removeChild(bengg);
+//     text.style.display = 'block';
+// };
+
+// new Vivus('bengg', {type: 'delayed', duration: 300}, vivusCB);
+
 });

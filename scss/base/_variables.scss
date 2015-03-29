@@ -1,6 +1,7 @@
 // Typography
 $base-font-family: 'Lato', $helvetica;
 $heading-font-family: $base-font-family;
+$logo-font: 'Quicksand', $heading-font-family;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -20,11 +21,13 @@ $origblue: #477dca;
 $tint-origblue : tint($origblue, 70%);
 
 $dark-gray: #444;
-$medium-gray: #999;
-$light-gray: #ddd;
+$medium-gray: #777;
+$light-gray: #ccc;
 
 $blue: #b0dcff;
 $brblue: #64baff;
+
+$yellow: #fff7b7;
 
 // Font Colors
 $base-background-color: #fff;

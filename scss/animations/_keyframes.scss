@@ -30,15 +30,6 @@
         @include transform(translateX(800%)); 
     }
 }
-// @include keyframes(bg-cloud) {
-//     from { 
-//         left:0%; 
-//     }
-
-//     to { 
-//         right:0%; 
-//     }
-// }
 
 @include keyframes(logo-cloud) {
     0% { 
@@ -70,3 +61,20 @@
         @include transform(translate(0, 0)); 
     }
 }
+
+@include keyframes(hovering-simple) {
+    0% { 
+        @include transform(translate(0, 0));
+    }
+    25% { 
+        @include transform(translate(0.3%, 3%));
+    }
+    75% {
+        @include transform(translate(-0.3%, -3%));
+    }
+    100% {
+        @include transform(translate(0, 0)); 
+    }
+}
+
+

@@ -10,40 +10,83 @@
     <meta name="format-detection" content="telephone=yes">
     <title>Ben.gg</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fredoka+One&text=ben.gjépoitFfasPrl' rel='stylesheet' type='text/css'>
-    
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
     <!-- add modernizer -->
 </head>
 <body class="blue">
 
-<div class="sky">
-    <div class="container">
-        <h1 class="logo">ben<span> . </span><span>gg</span></h1>
-        <div class="cloud">
-            <p>Mon nom est Jérémy.</p>
+<header class="navigation" role="banner">
+    <div class="navigation-wrapper">
+       <!--  <a href="#" class="logo">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image">
+        </a> -->
+        <a href="#" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+        <nav role="navigation">
+            <ul id="js-navigation-menu" class="navigation-menu show">
+                <li class="nav-link"><a href="#">Products</a></li>
+                <li class="nav-link"><a href="#">About Us</a></li>
+                <li class="nav-link"><a href="#">Projets</a></li>
+            </ul>
+        </nav>
+        <div class="navigation-tools">
+            <a href="#" class="sign-up">Contact</a>
         </div>
-        <div class="cloud cloud-small">
-            <p>Je suis</p>
-        </div>
-        <div class="cloud">
-            <p>Développeur web <em class="text-ego">passionné</em></p>
-        </div>
-        <div class="cloud cloud-smaller">
-            <p>et</p>
-        </div>
-        <div class="cloud">
-            <p>Étudiant <em class="text-ego">brillant</em></p>
-        </div>
-        <div class="cloud">
-            <p>En école de multimédia et management.</p>
-        </div>
-        <div class="cloud">
-            <p>Jetez un coup d'oeil à mon...</p>
-        </div>
-        <div class="cloud" id="patron"></div>
     </div>
+</header>
 
+<div class="intro">
+
+    <div class="container">
+        <?php
+        // include 'benggline.php';
+        ?>
+        <h1 class="name" id="benggText">ben<span>point</span><span>gg</span></h1>
+    </div>
+    
+    
+</div>
+
+
+<div class="sky">
+
+
+    <div class="container">
+
+        <div class="row row-3">
+            <div class="cloud-wrapper">
+                <div class="cloud">
+                    <p>Développeur web <em class="text-ego">passionné</em></p>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="row row-2">    
+            <div class="cloud-wrapper">
+                <div class="cloud">
+                    <p>Créateur multimédia <em class="text-ego">toqué</em></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-1"> 
+            <div class="cloud-wrapper">
+                <div class="cloud cloud-smaller">
+                    <p>et</p>
+                </div>
+                <div class="cloud">
+                    <p>Étudiant <em class="text-ego">brillant</em></p>
+                </div>
+                <div class="cloud cloud-small">
+                    <p>En école de multimédia et management.</p>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="cloud" id="patron"></div>
 </div>
 
 <div class="svg-container">
@@ -69,7 +112,16 @@ include 'inline.php';
     </div>
     
     <div class="choices">
-        <img src="img/plate.svg" id="plate">
+        <a href="#" class="choice">
+            <p>Une gorgée de mes <strong>compétences&nbsp;?</strong></p>
+        </a>
+        <a href="#" class="choice">
+            <p>Un bout de mes <strong>projets&nbsp;?</strong></p>
+        </a>
+        <a href="#" class="choice">
+            <p>Quelques amuse gueules&nbsp;?</p><img src="img/fries.svg">
+        </a>
+        
     </div>
     
 
@@ -77,6 +129,7 @@ include 'inline.php';
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/vivus/0.2.0/vivus.min.js"></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script> -->
 <script type="text/javascript" src="js/cool.js"></script>
 </body>

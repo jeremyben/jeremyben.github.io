@@ -5,18 +5,22 @@
 @import "base/base";
 @import "animations/animations";
 
+
 @import "helpers";
 @import "svg";
 
-body.blue{
+body{
     // background-color: tint($blue, 15%);
     // @include linear-gradient(top, shade(darken($blue, 10%),10%) 0%, tint($blue, 15%) 75%, tint($blue, 15%) 100%, $fallback:tint($blue, 15%));
 }
 
 .container{
     @include outer-container;
+    @include pad(0 default);
 }
 
+@import "menu";
+@import "intro";
 @import "sky";
 
 .text-ego{
@@ -31,16 +35,6 @@ body.blue{
 }
 
 
-.ceiling{
-    fill: tint($blue, 15%);
-}
-
-.tiles1{
-    fill: #e5e5e5;
-}
-.tiles2{
-    fill: #f2f2f2;
-}
 
 
 #bgff{
@@ -49,11 +43,18 @@ body.blue{
     // top: 0px;
     z-index:-10;
     overflow:hidden;
+
+    .ceiling{
+        fill: tint($blue, 15%);
+    }
+    .ground{
+        fill: tint(#FFE2BF,30%);
+    }
 }
 
 
 .fastfood{
-    @include outer-container;
+    // @include outer-container;
     position: relative;
     .row{
         @include row();
@@ -62,7 +63,7 @@ body.blue{
     // @include perspective(400px);
 
     h2.enseigne{
-        font-family: 'Fredoka One', $heading-font-family;
+        font-family: $logo-font;
         font-weight: 400;
         font-size: em(68);
         color: #fff;
@@ -81,18 +82,59 @@ body.blue{
 
     }
 
+    
+}
+
+.choices{
+    @include outer-container;
+    @include pad(0 default);
+    
+    @include perspective(200px);
+
+    margin-top: 5em;
+    img{
+        // width:750px;
+    }
+}
+
+a.choice{
+    display: block;
+    
+    background-color: #fff;
+    // border : $base-border;
+    margin-bottom: 1em;
+    padding: 1.5em;
+    // border-radius: 10px;
+    // box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+    font-size: em(20);
+    color : $medium-gray;
 
 
-    .choices{
-        margin-top: 7em;
-        text-align: center;
-        img{
-            width:750px;
-        }
+        
+    @include hover {
+        color : darken($medium-gray, 10%);
+        // @include transform(rotateX(0deg));
+        // box-shadow: 0px 2px 0px 0px shade($tint-origblue, 5%);
     }
 
-
     
+    @include media($md-up) {
+        @include span-columns(4);
+    }
+
+    // @include linear-gradient(left, #fff 0%, #fafafa 48%, #f4f4f4 52%, #fff 100%);
+    // margin: 0 auto 1em;
+    // width:80%;
+    // border-radius: 8px;
+    // @include transform-style(preserve-3d);
+    // @include backface-visibility(hidden);
+    // @include transform(rotateX(8deg));
+    // box-shadow: 0px 4px 0px 1px shade($tint-origblue, 5%);
+    // @include transition(transform 0.3s ease-out, box-shadow 0.3s ease-out);
+   
+   p{
+    margin: 0;
+   }
 }
 
 
@@ -131,10 +173,10 @@ body.blue{
 
 
 
- .intro{
+ .ex{
         
         @include span-columns(12);
-        @include media($large-screen-up) {
+        @include media($md-up) {
             @include span-columns(4);
             font-size: em(18);
         }
@@ -163,7 +205,7 @@ body.blue{
             @include span-columns(4 of 12);
         }
 
-        @include media($large-screen-up) {
+        @include media($md-up) {
             @include vmiddle(p);
             @include span-columns(10);
             .ui{
