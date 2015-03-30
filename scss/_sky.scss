@@ -1,50 +1,70 @@
 .sky{
-    @include linear-gradient(top, shade(darken($blue, 10%),10%) 0%, tint($blue, 15%) 85%, $fallback:tint($blue, 15%));
-    padding-top: 6em;
+    // @include linear-gradient(top, shade(darken($blue, 10%),10%) 0%, tint($blue, 15%) 85%, $fallback:tint($blue, 15%));
+    background: $skycolor;
+    // padding-top: 12em;
     // height: 800px;
     overflow: hidden;
     position: relative;
+
+    .intro-right{
+        top:auto;
+        margin-top: 1em;
+        margin-bottom: 6em;
+        color: $base-font-color;
+        font-size: em(18);
+    }
 }
 
 
 
 .row{
-    @include row;
-    &-1{
-        .cloud-wrapper{
-            @include shift(0);
-        }
-    }
-    &-2{
-        .cloud-wrapper{
-            @include shift(4);
-        }
-    }
-    &-3{
-        .cloud-wrapper{
-            @include shift(8);
-        }
-    }
+    // @include row;
+//     &-1{
+//         .cloud-wrapper{
+//             @include shift(0);
+//         }
+//     }
+//     &-2{
+//         .cloud-wrapper{
+//             @include shift(4);
+//         }
+//     }
+//     &-3{
+//         .cloud-wrapper{
+//             @include shift(8);
+//         }
+//     }
 }
 
 .cloud-wrapper{
-    @include media($md-up);
-    @include span-columns(4);
-    @include omega(3n);
-    margin-bottom: em(62);
+    @include media($md-up) {
+        @include shift(7);
+        @include span-columns(5);
+    }
+    @include media($lg-up) {
+        @include shift(0);
+        @include span-columns(4);
+        // @include omega(3n+2);
+    }
+    
+    margin-bottom: em(100);
+
 }
 
 .cloud{
-    width: em(290);
+    width: em(285);
+    max-width: 100%;
     height: em(100);
     background: #fff;
+    // background: tint($skycolor, 50);
     border-radius: em(100);
     // box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
-    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    // box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
     position: relative;
     text-align: center; 
     padding: em(32) em(25);
-    // margin: 0 auto 4em;
+    margin-left: auto;
+    margin-right: auto;
     color: $medium-gray;
     font-size: em(18);
     z-index: 1;
@@ -57,6 +77,7 @@
     &:after,&:before {
         border-radius: em(100);
         background: #fff;
+        // background: tint($skycolor, 50);
         content: '';
         position: absolute;
         z-index: -1;
@@ -64,13 +85,13 @@
     &:after{ 
         width: em(90);  
         height: em(90);
-        left: em(46);
+        left: em(42);
         top: em(-40);
     }
     &:before{
         width: em(145);
         height: em(145);
-        right: em(46);
+        right: em(42);
         top: em(-60);
     }
 
@@ -102,7 +123,7 @@
         opacity: 0;
         box-shadow: none;
         display: none;
-        left: 20%;
+        left: 15%;
     }
     
     // &-center{

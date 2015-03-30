@@ -1,28 +1,54 @@
 .intro{
-    background-color: $yellow;
-    padding : 4em 0 5em;
+    // background-color: $yellow;
+    background-color: $base-font-color;
+    padding : 4em 0 3em;
+    position: relative;
+    overflow: hidden;
     // #bengg g{
     //     // stroke: #444;
     // }
+
+    
 }
 
-h1.name{
+.intro-right{
+    color: #fff;
+    text-align: center;
+
+    @include media($md-up) {
+        @include shift(7);
+        @include span-columns(5);
+        position: relative;
+        top: 2.5em;
+    }
+    @include media($lg-up) {
+        @include shift(8);
+        @include span-columns(4);
+    }
+    
+}
+
+.name{
+    @include media($md-up) {
+        font-size:9em;
+    }
     font-family: $logo-font;
-    font-weight: 300;
+    font-weight: 400;
     margin: 0;
-    font-size: 7em;
+    font-size: 6em;
     // text-align: center;
     // text-shadow: 2px 2px 1px rgba(0,0,0,0.12);
     // color: $blue;
-    color: shade($yellow, 50);
+    color: shade($yellow, 40);
+    color: #444;
+    color: $skycolor;
+    position: absolute;
+    bottom: -0.35em;
     // color: rgba(0,0,0, 0.4);
     // color: #777;
     // width: 90%;
     white-space: nowrap;
-    // @include transform-style(preserve-3d);
-    // @include backface-visibility(hidden);
-    // @include perspective(1000);
-    // @include transform(translate3d(0,0,0));
+
     span{
         position: relative;
         // top: 0.2em;
@@ -32,4 +58,11 @@ h1.name{
             font-size: 0.4em;
         }
     } 
+
+    &-under{
+        color: #fff;
+        color: $base-font-color;
+        // color: $yellow;
+        top:-1em;
+    }
 }

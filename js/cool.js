@@ -15,18 +15,18 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// menu
-var menuToggle = $('#js-mobile-menu').unbind();
-$('#js-navigation-menu').removeClass("show");
+// // menu
+// var menuToggle = $('#js-mobile-menu').unbind();
+// $('#js-navigation-menu').removeClass("show");
 
-menuToggle.on('click', function(e) {
-    e.preventDefault();
-    $('#js-navigation-menu').slideToggle(function(){
-        if($('#js-navigation-menu').is(':hidden')) {
-            $('#js-navigation-menu').removeAttr('style');
-        }
-    });
-});
+// menuToggle.on('click', function(e) {
+//     e.preventDefault();
+//     $('#js-navigation-menu').slideToggle(function(){
+//         if($('#js-navigation-menu').is(':hidden')) {
+//             $('#js-navigation-menu').removeAttr('style');
+//         }
+//     });
+// });
 
 
 
@@ -68,12 +68,12 @@ addEvent(window, "resize", resizeBg);
 // nuages de fond
 var bgCloud = $('#patron').detach();
 for (var i = 0; i < 10; i++) {
-    bgCloud.clone().prependTo('.sky')
+    bgCloud.clone().appendTo('.sky')
     .addClass('bg-cloud-anim-'+ getRandomInt(2,6))
     .css({
         'display' : 'block',
         'font-size' : getRandomInt(3,7) + 'px',
-        'top' : getRandomInt(30,120) + '0px',
+        'top' : getRandomInt(20,100) + '0px',
         'left' : getRandomInt(15,30) + '%'
     });
 };

@@ -18,15 +18,10 @@
 
 <header class="navigation" role="banner">
     <div class="navigation-wrapper">
-       <!--  <a href="#" class="logo">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image">
-        </a> -->
-        <a href="#" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
         <nav role="navigation">
-            <ul id="js-navigation-menu" class="navigation-menu show">
-                <li class="nav-link"><a href="#">Products</a></li>
-                <li class="nav-link"><a href="#">About Us</a></li>
-                <li class="nav-link"><a href="#">Projets</a></li>
+            <ul class="navigation-menu">
+                <li class="nav-link"><a href="#">Portfolio</a></li>
+                <li class="nav-link"><a href="#">Compétences</a></li>
             </ul>
         </nav>
         <div class="navigation-tools">
@@ -38,10 +33,11 @@
 <div class="intro">
 
     <div class="container">
-        <?php
-        // include 'benggline.php';
-        ?>
         <h1 class="name" id="benggText">ben<span>point</span><span>gg</span></h1>
+        <div class="intro-right">
+            <p>Mon nom est Jérémy</p>
+        </div>
+        
     </div>
     
     
@@ -51,38 +47,43 @@
 <div class="sky">
 
 
+    
     <div class="container">
 
-        <div class="row row-3">
+    <p class="name name-under">ben<span>point</span><span>gg</span></p>
+    <div class="intro-right">
+    <p>Depuis 2013, je suis</p>
+    </div>
+       
             <div class="cloud-wrapper">
                 <div class="cloud">
-                    <p>Développeur web <em class="text-ego">passionné</em></p>
+                    <p>Développeur web <!-- <em class="text-ego">moderne</em> --></p>
                 </div>
             </div>
-        </div>
         
-
-        <div class="row row-2">    
             <div class="cloud-wrapper">
-                <div class="cloud">
-                    <p>Créateur multimédia <em class="text-ego">toqué</em></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row row-1"> 
-            <div class="cloud-wrapper">
-                <div class="cloud cloud-smaller">
+                <!-- <div class="cloud cloud-smaller">
                     <p>et</p>
-                </div>
+                </div> -->
                 <div class="cloud">
-                    <p>Étudiant <em class="text-ego">brillant</em></p>
+                    <p>Étudiant <!-- <em class="text-ego">brillant</em> --></p>
                 </div>
                 <div class="cloud cloud-small">
                     <p>En école de multimédia et management.</p>
                 </div>
             </div>
-        </div>
+
+         
+            <div class="cloud-wrapper">
+                <div class="cloud">
+                    <p>Créateur multimédia <!-- <em class="text-ego">passionné</em> --></p>
+                </div>
+            </div>
+       
+
+        
+            
+       
 
         
     </div>
@@ -100,7 +101,7 @@ include 'inline.php';
 <div class="fastfood">
 
     <div class="row">
-        <h2 class="enseigne"><span>Fast</span> Portfolio</h2>
+        <h2 class="enseigne"><span>mon</span> portfolio</h2>
 
         <!-- <div class="couille">
             <p class="ui">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -112,16 +113,29 @@ include 'inline.php';
     </div>
     
     <div class="choices">
+        <h3>Applications web</h3>
         <a href="#" class="choice">
-            <p>Une gorgée de mes <strong>compétences&nbsp;?</strong></p>
+            <p>Galaxiae</p>
         </a>
         <a href="#" class="choice">
-            <p>Un bout de mes <strong>projets&nbsp;?</strong></p>
+            <p>Myjobdating.com</p>
+        </a>
+    </div>
+
+    <div class="choices">
+        <h3>Films et animations</h3>
+        <a href="#" class="choice">
+            <p>Un simple rêve</p>
         </a>
         <a href="#" class="choice">
-            <p>Quelques amuse gueules&nbsp;?</p><img src="img/fries.svg">
+            <p>Cheers to Marseille</p>
         </a>
-        
+        <a href="#" class="choice">
+            <p>Nike Store La Valentine</p>
+        </a>
+        <a href="#" class="choice">
+            <p>Rond</p>
+        </a>
     </div>
     
 
