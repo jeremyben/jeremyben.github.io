@@ -4,7 +4,7 @@
 // on se rabat alors vers un mixin.
 
 // Wrapper video
-@mixin video_wrapper {
+@mixin videowrapper {
     height: 0;
     overflow: hidden;
     padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
@@ -17,8 +17,8 @@
         @include size(100%);
     }
 }
-%video_wrapper {
-	@include video_wrapper;
+%videowrapper {
+	@include videowrapper;
 }
 
 

@@ -58,6 +58,20 @@
   }
 }
 
+// 3D TEXT-SHADOW
+@mixin text3d($color, $depth, $harshness : 5%) {
+  $all: ();
+  @for $i from 1 through $depth {
+    $all: append($all, append(
+            0 $i*1px 0,
+            desaturate(darken($color, $i*$harshness),$i*$harshness)),
+            comma
+          );
+  }
+  // $all: append($all, 0 $depth*1px $depth*1px rgba(0,0,0,.1));
+  text-shadow: $all
+}
+
 
 // Readable media queries
 @mixin media-max($end) {
@@ -74,4 +88,13 @@
   @media screen and (min-width: $start) {
     @content;
   }
+}
+
+// OMEGA RESET
+// reset omega for media queries in a mobile-first approach
+// change context for flex-gutter if number of columns != 12
+@mixin omega-reset($nth, $context: null) {
+  @if $context == null { &:nth-child(#{$nth}) { margin-right: flex-gutter(); } }
+  @else { &:nth-child(#{$nth}) { margin-right: flex-gutter($context); } }
+  &:nth-child(#{$nth}+1) { clear: none; }
 }

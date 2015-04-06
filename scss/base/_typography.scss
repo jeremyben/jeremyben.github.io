@@ -1,6 +1,9 @@
 body {
   @include font-feature-settings("kern", "liga", "pnum");
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing:antialiased;
+  -moz-font-smoothing:antialiased;
+  -o-font-smoothing:antialiased;
+  font-smoothing:antialiased;
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
@@ -67,3 +70,6 @@ picture {
   margin: 0;
   max-width: 100%;
 }
+
+::-moz-selection { background: $yellow; color: shade($yellow,100); text-shadow: none; }
+::selection { background: $yellow; color: shade($yellow,100); text-shadow: none; }

@@ -1,7 +1,7 @@
 // Typography
 $base-font-family: 'Lato', $helvetica;
 $heading-font-family: $base-font-family;
-$logo-font: 'Quicksand', $heading-font-family;
+$logo-font: 'Delius', $heading-font-family;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -22,22 +22,29 @@ $tint-origblue : tint($origblue, 70%);
 
 $dark-gray: #444;
 $medium-gray: #777;
-$light-gray: #ccc;
+$light-gray: #ddd;
 
 $blue: #b0dcff;
 $brblue: #64baff;
 
 $yellow: #fff7b7;
-$yellow: #fff0a8;
 $yellow: #fff787;
+// $yellow: #fffdc1;
 
 $skycolor: tint($blue, 15%);
-$skycolor: darken($blue, 5%);
+$skycolor: darken($blue, 4%);
+$headercolor : $yellow;
+$headercolor : $dark-gray;
+$headercolor : #fff;
 
-// Font Colors
+// Font and background colors
+
 $base-background-color: #fff;
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: shade(darken($skycolor, 5%),30%);
+
+
+
 
 // Border
 $base-border-color: $light-gray;
