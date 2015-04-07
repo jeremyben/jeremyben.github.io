@@ -75,7 +75,7 @@ for (var i = 0; i < 8; i++) {
     .css({
         'display' : 'block',
         'font-size' : getRandomInt(3,7) + 'px',
-        'top' : getRandomInt(20,70) + '0px',
+        'top' : getRandomInt(24,79) + '0px',
         'left' : getRandomInt(12,30) + '%'
     });
 };

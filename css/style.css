@@ -1290,7 +1290,7 @@ header.navigation {
 /* line 23, D:/projects/www/bengg/scss/sky */
 .sky {
   background: #9cd3ff;
-  padding-top: 24em;
+  padding-top: 22em;
   overflow: hidden;
   position: relative; }
 
@@ -1334,11 +1334,10 @@ header.navigation {
   font-size: 0.9em; }
   /* line 61, D:/projects/www/bengg/scss/sky */
   .cloud-wrapper:last-child {
-    margin-bottom: 0.1em; }
+    margin-bottom: 4em; }
   @media screen and (min-width: 53.75em)  {
     .cloud-wrapper {
-      margin-bottom: 5em;
-      margin-left: 0%;
+      margin-bottom: 11em;
       float: left;
       display: block;
       margin-right: 2.357651598%;
@@ -1349,9 +1348,9 @@ header.navigation {
   @media screen and (min-width: 68em)  {
     .cloud-wrapper {
       font-size: 1em;
-      margin-bottom: 4em; } }
+      margin-bottom: 12em; } }
 
-/* line 79, D:/projects/www/bengg/scss/sky */
+/* line 78, D:/projects/www/bengg/scss/sky */
 .cloud {
   width: 17.8125em;
   max-width: 100%;
@@ -1367,40 +1366,40 @@ header.navigation {
   color: #777;
   font-size: 1.125em;
   z-index: 1; }
-  /* line 98, D:/projects/www/bengg/scss/sky */
+  /* line 97, D:/projects/www/bengg/scss/sky */
   .cloud > p {
     font-size: 1.25em;
     margin: 0; }
-  /* line 102, D:/projects/www/bengg/scss/sky */
+  /* line 101, D:/projects/www/bengg/scss/sky */
   .cloud:after, .cloud:before {
     border-radius: 6.25em;
     background: #fff;
     content: '';
     position: absolute;
     z-index: -1; }
-  /* line 110, D:/projects/www/bengg/scss/sky */
+  /* line 109, D:/projects/www/bengg/scss/sky */
   .cloud:after {
     width: 5.625em;
     height: 5.625em;
     left: 2.625em;
     top: -2.5em; }
-  /* line 116, D:/projects/www/bengg/scss/sky */
+  /* line 115, D:/projects/www/bengg/scss/sky */
   .cloud:before {
     width: 9.0625em;
     height: 9.0625em;
     right: 2.625em;
     top: -3.75em; }
-  /* line 123, D:/projects/www/bengg/scss/sky */
+  /* line 122, D:/projects/www/bengg/scss/sky */
   .cloud-small {
     z-index: 2;
     width: 17.5em;
     margin-bottom: 3em;
     font-size: 0.75em; }
-    /* line 129, D:/projects/www/bengg/scss/sky */
+    /* line 128, D:/projects/www/bengg/scss/sky */
     .cloud-small > p {
       font-size: 1.625em;
       line-height: 1; }
-  /* line 134, D:/projects/www/bengg/scss/sky */
+  /* line 133, D:/projects/www/bengg/scss/sky */
   .cloud-smaller {
     z-index: 2;
     width: 17.1875em;
@@ -1409,11 +1408,11 @@ header.navigation {
     position: absolute;
     top: -5em;
     left: -1em; }
-    /* line 143, D:/projects/www/bengg/scss/sky */
+    /* line 142, D:/projects/www/bengg/scss/sky */
     .cloud-smaller > p {
       font-size: 2.25em;
       line-height: 1; }
-  /* line 149, D:/projects/www/bengg/scss/sky */
+  /* line 148, D:/projects/www/bengg/scss/sky */
   .cloud#patron {
     position: absolute;
     z-index: 0;
@@ -1440,24 +1439,18 @@ header.navigation {
 
 /* line 53, D:/projects/www/bengg/scss/style.scss */
 #bgff {
-  top: -1px; }
-  /* line 55, D:/projects/www/bengg/scss/style.scss */
-  #bgff .ceiling {
-    fill: #9cd3ff; }
-  /* line 59, D:/projects/www/bengg/scss/style.scss */
-  #bgff .ground {
-    fill: #fff0df; }
+  top: -10em; }
 
-/* line 65, D:/projects/www/bengg/scss/style.scss */
+/* line 58, D:/projects/www/bengg/scss/style.scss */
 .portfolio {
   background-color: #fff0df;
   padding-bottom: 10em; }
-  /* line 71, D:/projects/www/bengg/scss/style.scss */
+  /* line 64, D:/projects/www/bengg/scss/style.scss */
   .portfolio .container {
     position: relative;
     z-index: 2; }
 
-/* line 78, D:/projects/www/bengg/scss/style.scss */
+/* line 71, D:/projects/www/bengg/scss/style.scss */
 h2.enseigne {
   font-weight: 400;
   font-size: 3.25em;
@@ -1465,11 +1458,11 @@ h2.enseigne {
   text-shadow: 0 1px 0 #fee6cc, 0 2px 0 #fcddb9, 0 3px 0 #f9d3a7, 0 4px 0 #f6c996, 0 5px 0 #f2bf86;
   position: relative;
   text-align: center;
-  padding-top: 4.75em;
+  padding-top: 1.875em;
   margin-top: 0;
   margin-bottom: 3.75em; }
 
-/* line 99, D:/projects/www/bengg/scss/style.scss */
+/* line 92, D:/projects/www/bengg/scss/style.scss */
 .choices {
   display: block; }
   /* line 20, D:/projects/www/bengg/scss/bourbon/addons/clearfix */
@@ -1477,7 +1470,7 @@ h2.enseigne {
     clear: both;
     content: "";
     display: table; }
-  /* line 102, D:/projects/www/bengg/scss/style.scss */
+  /* line 95, D:/projects/www/bengg/scss/style.scss */
   .choices .choice:hover {
     color: #5e5e5e;
     -webkit-transform: scale(1.04);
@@ -1488,7 +1481,7 @@ h2.enseigne {
     position: relative;
     z-index: 3; }
 
-/* line 111, D:/projects/www/bengg/scss/style.scss */
+/* line 104, D:/projects/www/bengg/scss/style.scss */
 .choice {
   display: block;
   cursor: pointer;
@@ -1537,24 +1530,24 @@ h2.enseigne {
       /* line 83, D:/projects/www/bengg/scss/neat/grid/omega */
       .choice:nth-child(3n+1) {
         clear: left; } }
-  /* line 141, D:/projects/www/bengg/scss/style.scss */
+  /* line 134, D:/projects/www/bengg/scss/style.scss */
   .choice .type {
     display: inline-block;
     font-size: 1em;
     font-weight: 300;
     top: 0;
     left: 0; }
-  /* line 155, D:/projects/www/bengg/scss/style.scss */
+  /* line 148, D:/projects/www/bengg/scss/style.scss */
   .choice h3 {
     margin: 0;
     font-weight: 700;
     font-size: 1.125em; }
-  /* line 161, D:/projects/www/bengg/scss/style.scss */
+  /* line 154, D:/projects/www/bengg/scss/style.scss */
   .choice.viewed {
     background: #fff7ef;
     border-bottom-color: #dfdfdf; }
 
-/* line 170, D:/projects/www/bengg/scss/style.scss */
+/* line 163, D:/projects/www/bengg/scss/style.scss */
 .video {
   height: 0;
   overflow: hidden;
@@ -1568,7 +1561,7 @@ h2.enseigne {
     height: 100%;
     width: 100%; }
 
-/* line 174, D:/projects/www/bengg/scss/style.scss */
+/* line 167, D:/projects/www/bengg/scss/style.scss */
 .project {
   margin-top: 1em; }
 

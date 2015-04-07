@@ -51,14 +51,7 @@ $ground : tint(#FFE2BF,50%);
 
 
 #bgff{
-    top:-1px;
-    .ceiling{
-        fill: $skycolor;
-        // fill: transparent;
-    }
-    .ground{
-        fill: $ground;
-    }
+    top:-10em;
 }
 
 
@@ -83,7 +76,7 @@ h2.enseigne{
     @include text3d($ground, 5, 4%);
     position: relative;
     text-align: center;
-    padding-top: em(76);
+    padding-top: em(30);
     margin-top: 0;
     margin-bottom: em(60);
     // width: 50%;
