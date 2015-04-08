@@ -11,7 +11,7 @@ header.navigation {
   background-color: $navigation-background;
   min-height: $navigation-height;
   width: 100%;
-  z-index: 999;
+  z-index: 9;
 
   a {
     text-decoration: none;
@@ -22,7 +22,7 @@ header.navigation {
     @include clearfix;
     @include outer-container;
     position: relative;
-    z-index: 9999;
+    z-index: 99;
     @include media($md-screen) {
       @include pad(0 default);
     }
@@ -33,7 +33,7 @@ header.navigation {
 
   nav {
     min-height: $navigation-height;
-    z-index: 9999999;
+    z-index: 99;
     float: left;
   }
 
@@ -43,7 +43,7 @@ header.navigation {
     margin: 0 auto;
     overflow: visible;
     width: 100%;
-    z-index: 9999;
+    z-index: 99;
     display: inline;
     margin: 0;
     padding: 0;
@@ -58,15 +58,8 @@ header.navigation {
     overflow: hidden;
     padding-left: 0.8em;
     text-align: right;
-    z-index: 9999;
-
-
-      background: transparent;
-      display: inline;
-      line-height: $navigation-height;
-      text-decoration: none;
-      width: auto;
-
+    z-index: 99;
+    display: inline;
 
     a {
       
@@ -118,6 +111,8 @@ header.navigation {
       font-size: 1em;
       background-color: $yellow;
       color: shade($yellow,60);
+      border-bottom-right-radius: $base-border-radius;
+      border-bottom-left-radius: $base-border-radius;
       float: right;
       @include hover {
         color : #000;

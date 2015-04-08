@@ -6,9 +6,8 @@
 @import "base/browser-update";
 @import "animations/animations";
 
-
 @import "helpers";
-@import "svg";
+@import "modal";
 
 body{
     background: #fff;
@@ -40,7 +39,7 @@ body{
 }
 
 
-$ground : tint(#FFE2BF,50%);
+$ground : tint(#FFE2BF,48%);
 
 #bgclouds, #bgff {
     width:100%;
