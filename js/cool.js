@@ -99,6 +99,7 @@ $('.choice').on('click', function(event) {
             .data('open', false)
             .removeAttr('style').addClass('viewed')
             .find('h3').removeAttr('style').end()
+            .find('.close-choice').hide().end()
             .find('.project').remove();
     }   
     // var others = [];
@@ -115,7 +116,7 @@ $('.choice').on('click', function(event) {
     // };
     if (!isOpen) {
         // that.append('<div style="font-size: 2em;">&#10050;</div>');
-        that.insertBefore(parent);       
+        that.insertBefore(parent);   
         siblings.hide();
         that.animate({width: '100%', 'margin-right': '0'},
         600, function() {
@@ -126,7 +127,7 @@ $('.choice').on('click', function(event) {
             })
             .done(function(data) {
                 console.log(data);
-                that.find('h3').animate({"font-size": "2em"}, 600);
+                that.find('h3').animate({"font-size": "2em"}, 600).siblings('.close-choice').fadeIn(600);
                 $(data).hide().appendTo(that).slideDown();
                 siblings.appendTo(parent).slideDown();
                 $(other).hide().appendTo(parent).slideDown();
@@ -140,6 +141,19 @@ $('.choice').on('click', function(event) {
     //         .find('h3').removeAttr('style').end()
     //         .find('.project').remove();
     }
+});
+
+$('.close-choice').on('click', function(event){
+    event.stopImmediatePropagation();
+    var that = $(this);
+    var parent = $('.choices');
+    var choice = that.closest('.choice').detach();
+    that.hide();
+    choice.data('open', false)
+        .removeAttr('style').addClass('viewed')
+        .find('h3').removeAttr('style').end()
+        .find('.project').remove().end()
+        .hide().appendTo(parent).slideDown();
 });
 
 
