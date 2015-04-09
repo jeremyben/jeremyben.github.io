@@ -20,7 +20,7 @@ h6 {
   // font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: $smaller-spacing 0 $small-spacing;
-  text-rendering: optimizeLegibility;
+  // text-rendering: optimizeLegibility;
 }
 
 @for $i from 1 through 6 {

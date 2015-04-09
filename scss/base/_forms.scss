@@ -14,8 +14,9 @@ select {
 }
 
 label {
-  font-weight: 600;
-  margin-bottom: $small-spacing / 2;
+  // font-weight: 600;
+  margin-bottom: $small-spacing / 1.8;
+  color: $medium-gray;
 
   &.required::after {
     content: "*";
@@ -42,7 +43,8 @@ textarea {
   width: 100%;
   @include placeholder {
     color: #ccc;
-    font-style: italic;
+    // font-size: 1.4em;
+    // line-height:0.7;
   }
 
   &:hover {

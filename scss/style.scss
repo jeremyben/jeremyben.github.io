@@ -144,17 +144,29 @@ h2.enseigne{
         left:0;
     }
    
-   h3{
-    margin: 0;
-    font-weight: 700;
-    font-size: 1.125em;
-   }
+    h3 {
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.125em;
+    }
 
-   &.viewed{
+    &.viewed {
         background : #fff7ef;
         border-bottom-color : #dfdfdf;
         // display : none;
    }
+}
+
+.close-choice{
+    display:none;
+    float: right;
+    cursor:pointer;
+    font-size:1.25em;
+    @include transition(transform 0.1s ease-out);
+    @include hover {
+        color: #000;
+        @include transform(scale(1.5));  
+    };
 }
 
 
