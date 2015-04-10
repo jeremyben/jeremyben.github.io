@@ -202,22 +202,49 @@ $('#contact-form').on('submit', function(event) {
     event.preventDefault();
     var that = $(this);
     // var btnWidth = that.find('[input type="submit"]').width();
-    that.find('input[type="submit"]').val('. . .').prop('disabled', true);
-    // $.ajax({
-    //     url: that.attr('action'),
-    //     type: that.attr('method'),
-    //     data: that.serializeObject(),
-    //     dataType: 'json'
-    // })
-    // .done(function() {
-    //     console.log("success");
-    // })
-    // .fail(function() {
-    //     console.log("error");
-    // })
-    // .always(function() {
-    //     console.log("complete");
-    // });   
+    that.find('input[type="submit"]').prop('disabled', true);
+    $.ajax({
+        // url: that.attr('action'),
+        type: that.attr('method'),
+        data: 'that',
+        dataType: 'json'
+    })
+    .done(function() {
+        console.log("success");
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
+        var fWidth = that.width();
+        that
+            .queue('steps', function(next){
+                that.fadeToggle();
+                next();
+            })
+            .delay(400, 'steps')
+            .queue('steps', function(next){
+                var msg = '<h4 style="text-align:center">Merci !</h4>';
+                msg += '<p>Je suis déjà en train de répondre !<br><small>à quelques jours près</small></p>';
+                // msg += '<p><i class="anim-rotate" style ="font-size:32px"></i></p>';
+                that.html(msg);
+                that.children().width(fWidth);
+                that.fadeToggle();
+                // that.children().unwrap();
+                next();
+            })
+            .delay(2000, 'steps')
+            // .queue('steps', function(next){
+            //     modal.plainModal('close');
+            //     next();
+            // })
+            .queue('steps', function(next){
+                $('#contact').text('Merci !').css('background-color', '#e8f5ff').prop('disabled', true);
+                next();
+            })
+            .dequeue('steps');
+    });   
 });
 
 
