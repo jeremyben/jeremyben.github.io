@@ -38,7 +38,15 @@ h6 {
 
 p {
   margin: 0 0 $small-spacing;
+  &.sm{
+    margin: 0 0 $small-spacing/1.5;
+  }
+  &.bm{
+    margin: 0 0 $small-spacing*1.5;
+  }
 }
+
+
 
 a {
   color: $action-color;
@@ -55,6 +63,9 @@ a {
   &:focus {
     outline: none;
   }
+  &.disabled{
+    pointer-events: none;
+  }
 }
 
 hr {
@@ -69,6 +80,13 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+.big{
+  font-size: em(18);
+}
+.bigger{
+  font-size: em(20);
 }
 
 ::-moz-selection { background: $yellow; color: shade($yellow,100); text-shadow: none; }

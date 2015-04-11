@@ -118,6 +118,12 @@ header.navigation {
         color : #000;
         background-color: tint($yellow,30);
       }
+      &.disabled{
+        background-color: tint($skycolor,10%);
+        color:#fff;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+      }
     }
 
 

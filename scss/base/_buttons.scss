@@ -1,5 +1,6 @@
 #{$all-button-inputs},
-button {
+button,
+a.btn {
   @include appearance(none);
   -webkit-font-smoothing: antialiased;
   background-color: $action-color;
@@ -27,5 +28,11 @@ button {
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  &.btn-yellow{
+    background-color: $yellow;
+    color: $medium-gray;
+    font-weight: 400;
   }
 }

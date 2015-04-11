@@ -6,7 +6,7 @@
 @import "base/browser-update";
 @import "animations/animations";
 
-@import "helpers";
+// @import "helpers";
 @import "modal";
 
 body{
@@ -22,6 +22,10 @@ body{
     @include outer-container;
     @include pad(0 default);
 }
+
+// .tac {
+//     text-align: center;
+// }
 
 @import "menu";
 @import "sky";
@@ -39,7 +43,7 @@ body{
 }
 
 
-$ground : tint(#FFE2BF,48%);
+$ground : tint(#FFE2BF,45%);
 
 #bgclouds, #bgff {
     width:100%;
@@ -51,15 +55,19 @@ $ground : tint(#FFE2BF,48%);
 
 #bgff{
     top:-10em;
+    // position: relative;
 }
 
 
 .portfolio{
     background-color: $ground;
+    // background-color: tint(#8FD188,40%);
     // @include outer-container;
     // @include perspective(400px);
-    padding-bottom: 10em;
-
+    padding-bottom: 2em;
+    @include media($sm-up) {
+        padding-bottom: 4em;
+    }
     .container{
         position: relative;
         z-index: 2;
@@ -69,7 +77,7 @@ $ground : tint(#FFE2BF,48%);
 
 h2.enseigne{
     font-weight: 400;
-    font-size: em(52);
+    font-size: em(48);
     // color: shade($ground, 50);
     color: #fff;
     @include text3d($ground, 5, 4%);
@@ -77,7 +85,11 @@ h2.enseigne{
     text-align: center;
     padding-top: em(30);
     margin-top: 0;
-    margin-bottom: em(60);
+    margin-bottom: em(44);
+    @include media($sm-up) {
+        margin-bottom: em(58);
+        font-size: em(52); 
+    }
     // width: 50%;
     // min-width: 270px;
     // max-width: 600px;
@@ -106,7 +118,10 @@ h2.enseigne{
     background-color: #fff;
     // font-size: em(18);
     color : $medium-gray;
-    margin-bottom: flex-gutter();
+    margin-bottom: flex-gutter() *1.25;
+    @include media($sm-up) {
+        margin-bottom: flex-gutter();
+    }
     padding: 1.4em 1.5em;
     position: relative;
     @include transition(transform 0.1s ease-out);
@@ -176,9 +191,33 @@ h2.enseigne{
 }
 
 .project{
-    margin-top: 1em;
+    margin-top: 1.125em;
+    color: $base-font-color;
+    .video{
+        margin-bottom: 1em;
+    }
+    font-size: em(14);
+    @include media($sm-up) {
+        font-size: 1em;
+    }
+    hr{
+        margin-left: 10%;
+        margin-right: 10%;
+        margin: 2.5em 10%;
+    }
+}
+
+.poster{
+    // margin-top: 2em;
+    text-align: center;
+    img{
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+    }
     p{
-        
+        font-style: italic;
+        color: $medium-gray;
+        margin: 0;
+        font-size: em(14);
     }
 }
 
@@ -186,47 +225,33 @@ h2.enseigne{
 
 
 
+footer{
+    background-color: #fff;
+    // background-color: $ground;
+    box-shadow: 0px 1px 2px transparentize(#FFC7A8, 0.2) inset;
+    padding: 0.9em 0;
+    p{
+        display: inline;
+        margin: 0;
+        // display: inline-block;
+        // padding-top: 0.1em;
+        line-height: 1.75;
+        color: darken(#ffe5c6,5%);
+        // font-weight: 700;
+    }
 
-    // .ex{
-        
-    //     @include span-columns(12);
-    //     @include media($md-up) {
-    //         @include span-columns(4);
-    //         font-size: em(18);
-    //     }
-    //     @extend %panel;
-    // }
+}
 
-    // .couille{
-    //     @include span-columns(12);
-    //     // @include shift(1);
-    //     // @include omega();
-    //     @extend %panel;
-    //     height: 200px;
-    //     overflow: hidden;
-        
-    //     .ui{
-    //         @include span-columns(4 of 12);
-    //     }
-    //     .lol{
-    //         @include span-columns(4 of 12);
-    //     }
-    //     .rofl{
-    //         @include span-columns(4 of 12);
-    //     }
 
-    //     @include media($md-up) {
-    //         @include vmiddle(p);
-    //         @include span-columns(10);
-    //         .ui{
-    //             @include span-columns(4 of 10);
-    //         }
-    //         .lol{
-    //             @include span-columns(4 of 10);
-    //         }
-    //         .rofl{
-    //             @include span-columns(2 of 10);
-    //         }
-    //     }
-        
-    // }
+
+.linkedin{
+    float: right;
+    img{
+        max-width: 1.75em;
+        vertical-align: middle;
+    }
+    @include transition(transform 0.12s ease-out);
+    @include hover {
+        @include transform(scale(1.2));  
+    };
+}

@@ -1,9 +1,9 @@
-fieldset {
-  background-color: lighten($base-border-color, 10%);
-  border: $base-border;
-  margin: 0 0 $small-spacing;
-  padding: $base-spacing;
-}
+// fieldset {
+//   background-color: lighten($base-border-color, 10%);
+//   border: $base-border;
+//   margin: 0 0 $small-spacing;
+//   padding: $base-spacing;
+// }
 
 input,
 label,
@@ -17,7 +17,6 @@ label {
   // font-weight: 600;
   margin-bottom: $small-spacing / 1.8;
   color: $medium-gray;
-
   &.required::after {
     content: "*";
   }
@@ -46,7 +45,6 @@ textarea {
     // font-size: 1.4em;
     // line-height:0.7;
   }
-
   &:hover {
     border-color: darken($base-border-color, 10%);
   }

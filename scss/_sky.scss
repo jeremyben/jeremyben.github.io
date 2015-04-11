@@ -7,6 +7,11 @@
     margin: 0;
     text-align: center;
     font-size: 6em;
+    padding-top: 0.3em;
+    @include media($sm-up) {
+        padding-top: 0;
+        font-size: 7em;
+    } 
     @include media($md-up) {
         font-size: 8.5em;
     } 
@@ -23,9 +28,17 @@
 .sky{
     // @include linear-gradient(top, shade(darken($blue, 10%),10%) 0%, tint($blue, 15%) 85%, $fallback:tint($blue, 15%));
     background: $skycolor;
-    padding-top: 22em;
+    padding-top: 20em;
+    @include media($sm-up) {
+        padding-top: 22em;
+    }
     overflow: hidden;
     position: relative;
+    .container{
+        @include media($lg-up) {
+            @include pad(0);
+        }
+    }
 }
 
 .intro{
@@ -34,23 +47,19 @@
     // font-weight: 300;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
     font-size: em(26);
+    margin-bottom: 3.5em;
     @include media($md-up) {
         font-size: em(32);
+        margin-bottom: 4.5em;
     }
       
     position: relative;
     z-index: 10;
-    margin-bottom: 4.5em;
+    
     text-align: center;
 }
 
-.clouds{
-    @include outer-container;
-    @include pad(0 default);
-    @include media($lg-up) {
-        @include pad(0);
-    }
-}
+
 
 
 .cloud-wrapper{
@@ -59,19 +68,19 @@
 
     @include transition(all 1s ease-in-out);
     &:last-child{
-        margin-bottom: 4em;
+        margin-bottom: 3em;
     }
-    margin-bottom: 6em;
+    margin-bottom: 7em;
     font-size: 0.9em;
     @include media($md-up) {
-        margin-bottom: 11em;
+        margin-bottom: 11.5em;
         @include span-columns(4);
         // @include omega(3n+2);
     }
     
     @include media($lg-up) {
         font-size: 1em; 
-         margin-bottom: 12em;
+         margin-bottom: 13em;
     } 
     &:hover{
         .text-ego{
@@ -92,7 +101,7 @@
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     position: relative;
     text-align: center; 
-    padding: em(32) em(25);
+    padding: em(32) em(22);
     margin-left: auto;
     margin-right: auto;
     color: $medium-gray;
@@ -134,7 +143,7 @@
 
     &-small{
         z-index: 2;
-        width: em(280);
+        width: em(285);
         margin-bottom: 3em;
         font-size: em(10);
         position: absolute;
@@ -142,7 +151,7 @@
         left:-1em;
         // color: #888;
         >p{
-            font-size: em(22);
+            font-size: em(23);
             line-height: 1;
         }
     }

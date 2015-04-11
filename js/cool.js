@@ -59,13 +59,7 @@ var bgffWidth = bgff.getAttribute('width').replace('px', '');
 var bgclouds = document.getElementById("bgclouds");
 var bgcloudsWidth = bgclouds.getAttribute('width').replace('px', ''); 
 function resizeBg(){
-    // if (window.innerHeight >= document.body.scrollHeight){
-    //     bgffContainer.style.position = 'static';
-    //     bgff.style.bottom = 0;
-    // } else {
-    //     bgffContainer.style.position = '';
-    //     bgff.style.bottom = '';
-    // }
+
     if (window.innerWidth <= bgffWidth){
         bgff.setAttribute('preserveAspectRatio', 'xMidYMin slice');
     } else {
@@ -83,6 +77,10 @@ addEvent(window, "resize", resizeBg);
 
 ////////// READY ///////////
 $(document).ready(function() {
+
+// Année en cours
+var year = new Date().getFullYear();
+$('#year').text(year);
 
 // nuages de fond
 var bgCloud = $('#patron').detach();
@@ -204,56 +202,46 @@ $('#contact-form').on('submit', function(event) {
     // var btnWidth = that.find('[input type="submit"]').width();
     that.find('input[type="submit"]').prop('disabled', true);
     $.ajax({
-        // url: that.attr('action'),
+        url: that.attr('action'),
         type: that.attr('method'),
-        data: 'that',
+        data: that.serializeObject(),
         dataType: 'json'
     })
     .done(function() {
-        console.log("success");
-    })
-    .fail(function() {
-        console.log("error");
-    })
-    .always(function() {
-        console.log("complete");
         var fWidth = that.width();
         that
             .queue('steps', function(next){
-                that.fadeToggle();
+                that.slideToggle();
+                $('#contact').fadeToggle();
                 next();
             })
             .delay(400, 'steps')
             .queue('steps', function(next){
-                var msg = '<h4 style="text-align:center">Merci !</h4>';
-                msg += '<p>Je suis déjà en train de répondre !<br><small>à quelques jours près</small></p>';
+                var msg = '<h4 style="text-align:center">Reçu !</h4>';
+                msg += '<p style="text-align:center">Je suis déjà en train de répondre ;)</p>';
                 // msg += '<p><i class="anim-rotate" style ="font-size:32px"></i></p>';
                 that.html(msg);
                 that.children().width(fWidth);
-                that.fadeToggle();
+                that.slideToggle();
                 // that.children().unwrap();
                 next();
             })
-            .delay(2000, 'steps')
-            // .queue('steps', function(next){
-            //     modal.plainModal('close');
-            //     next();
-            // })
             .queue('steps', function(next){
-                $('#contact').text('Merci !').css('background-color', '#e8f5ff').prop('disabled', true);
+                $('#contact').addClass('disabled').text('Merci !').fadeToggle();
+                next();
+            })
+            .delay(2250, 'steps')
+            .queue('steps', function(next){
+                modal.plainModal('close');
+                // that.children().width('');
                 next();
             })
             .dequeue('steps');
+    })
+    .fail(function() {
+        console.log("error");
     });   
 });
-
-
-
-
-
-
-
-
 
 
 
