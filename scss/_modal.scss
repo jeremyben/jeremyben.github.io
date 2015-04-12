@@ -2,6 +2,7 @@
     // text-align: center;
     background-color: #fafafa;
     padding: 2em;
+    position: relative;
     border-radius: $base-border-radius;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     @include media($md-up) {
@@ -43,4 +44,18 @@
             color: #fff;
         }
     }
+}
+
+.plainmodal-close{
+    position: absolute;
+    top: 0.25em;
+    right : 0.5em;
+    cursor:pointer;
+    font-size:1.5em;
+    line-height: 1;
+    @include transition(transform 0.1s ease-out);
+    @include hover {
+        color: #000;
+        @include transform(scale(1.5));  
+    };
 }

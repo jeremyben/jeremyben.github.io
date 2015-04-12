@@ -100,7 +100,7 @@ header.navigation {
       height: $navigation-height;
       display: inline-block;
       line-height: $navigation-height;
-      padding: 0 1.5em;
+      padding: 0 1.125em;
       color: $navigation-color;
       @include hover {
         color: $navigation-color-hover;

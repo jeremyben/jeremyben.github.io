@@ -12,10 +12,14 @@ $sm-screen: em(640);
 $md-screen: em(860);
 $lg-screen: em(1088);
 
+
 $sm-up: new-breakpoint(min-width $sm-screen);
 $md-up: new-breakpoint(min-width $md-screen);
 $lg-up: new-breakpoint(min-width $lg-screen);
 
+
+$sm-max: new-breakpoint(max-width ($sm-screen - em(1)));
+$md-max: new-breakpoint(max-width ($md-screen - em(1)));
 
 // $visual-grid: true;
 
