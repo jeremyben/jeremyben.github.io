@@ -52,19 +52,10 @@ function getRandomInt(min, max) {
 
 
 //// Contrôle taille, position et aspect des backgrounds svg selon viewport.
-var bgff = document.getElementById("bgff");
-var bgffWidth = parseInt(bgff.getAttribute('width').replace('px', ''), 10); 
-// var bgffContainer = bgff.parentNode;
 var bgclouds = document.getElementById("bgclouds");
 var bgcloudsWidth = parseInt(bgclouds.getAttribute('width').replace('px', ''), 10); 
 var bgcloudsHeight = bgclouds.clientHeight;
 function resizeBg(){
-    if (window.innerWidth <= bgffWidth){
-        bgff.setAttribute('preserveAspectRatio', 'xMidYMin slice');
-    } else {
-        bgff.setAttribute('preserveAspectRatio', 'none');
-    }
-
     if (window.innerWidth <= bgcloudsWidth + 160){ 
         bgclouds.setAttribute('preserveAspectRatio', 'xMaxYMin slice');
         bgclouds.setAttribute('height', bgcloudsHeight);

@@ -76,12 +76,16 @@ $ground : tint(#FFE2BF,45%);
 
 
 .portfolio{
-    background-color: $ground;
+    background-color: darken($ground,1);
+    background-image: url(../img/coolbg.svg);
     // background-color: tint(#8FD188,40%);
     // @include outer-container;
     // @include perspective(400px);
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     @include media($sm-up) {
+        padding-bottom: 3em;
+    }
+    @include media($md-up) {
         padding-bottom: 4em;
     }
     .container{
@@ -91,32 +95,31 @@ $ground : tint(#FFE2BF,45%);
     
 }
 
+
 h2.enseigne{
-    font-weight: 400;
-    // color: shade($ground, 50);
-    color: #fff;
-    @include text3d($ground, 5, 4%);
-    position: relative;
+    font-weight: 300;
+    // font-family: $logo-font;
+    color: $medium-gray;
+    // color: darken($ground, 10);
+    // @include text3d($ground, 5, 2%);
+    // box-shadow: 0px -1px 2px transparentize(#FFC7A8, 0.3) inset;
+    // border-top: 1px solid shade($skycolor, 10);
+    // background-color: rgba(255,255,255,0.5);
+    background-color: #fff;
     text-align: center;
-    padding-top: em(30);
+    padding: em(20) 0;
     margin-top: 0;
-    margin-bottom: em(44);
-    font-size: em(52); 
-    @include media($sm-max) {
-        padding-top: em(22);
-        margin-bottom: em(36);
-        font-size: em(42);
+    margin-bottom: em(10);
+    font-size: em(42);
+    @include media($sm-up) {
+        padding: em(24) 0;
+        margin-bottom: em(20);
+        font-size: em(46);
     }
     @include media($md-up) {
-        margin-bottom: em(56);
+        margin-bottom: em(28);
+        font-size: em(50);
     }
-    // width: 50%;
-    // min-width: 270px;
-    // max-width: 600px;
-    // span{
-    //     color: #FFEDD9;
-    //     // color: $ground;
-    // }
 
 }
 
@@ -136,7 +139,6 @@ h2.enseigne{
     display: block;
     cursor: pointer;
     background-color: #fff;
-    // font-size: em(18);
     color : $medium-gray;
     margin-bottom: flex-gutter() *1.25;
     @include media($sm-up) {
@@ -145,13 +147,6 @@ h2.enseigne{
     padding: 1.4em 1.5em;
     position: relative;
     @include transition(transform 0.1s ease-out);
-    
-
-    // @include linear-gradient(left, #fff 0%, #fafafa 48%, #f4f4f4 52%, #fff 100%);
-    // border : $base-border;
-    // border-radius: 10px;
-    // box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-    // box-shadow: 0px 2px 0px 0px desaturate($skycolor, 20%);
     border-bottom: 2px solid desaturate($skycolor, 15%);
 
     @include media($md-up) {
@@ -169,12 +164,6 @@ h2.enseigne{
         display: inline-block;
         font-size: em(16);
         font-weight: 300;
-        // border-right: $base-border;
-        // border-bottom: $base-border;
-        
-        // background-color: #f5f5f5;
-        // padding: 0.2em 0.5em;
-        // position: absolute;
         top:0;
         left:0;
     }
@@ -247,7 +236,6 @@ h2.enseigne{
 
 footer{
     background-color: #fff;
-    // background-color: $ground;
     box-shadow: 0px 1px 2px transparentize(#FFC7A8, 0.2) inset;
     padding: 0.9em 0;
     p{
