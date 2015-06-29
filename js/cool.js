@@ -52,20 +52,21 @@ function getRandomInt(min, max) {
 
 
 //// Contrôle taille, position et aspect des backgrounds svg selon viewport.
-var bgclouds = document.getElementById("bgclouds");
-var bgcloudsWidth = parseInt(bgclouds.getAttribute('width').replace('px', ''), 10); 
-var bgcloudsHeight = bgclouds.clientHeight;
-function resizeBg(){
-    if (window.innerWidth <= bgcloudsWidth + 160){ 
-        bgclouds.setAttribute('preserveAspectRatio', 'xMaxYMin slice');
-        bgclouds.setAttribute('height', bgcloudsHeight);
-    } else {
-        bgclouds.setAttribute('height', bgcloudsHeight + 60);
-        bgclouds.setAttribute('preserveAspectRatio', 'none');
-    }
-};
-resizeBg();
-addEvent(window, "resize", resizeBg);
+
+// var bgclouds = document.getElementById("bgclouds");
+// var bgcloudsWidth = parseInt(bgclouds.getAttribute('width').replace('px', ''), 10); 
+// var bgcloudsHeight = bgclouds.clientHeight;
+// function resizeBg(){
+//     if (window.innerWidth <= bgcloudsWidth + 160){
+//         bgclouds.setAttribute('preserveAspectRatio', 'xMaxYMin slice');
+//         bgclouds.setAttribute('height', bgcloudsHeight);
+//     } else {
+//         bgclouds.setAttribute('height', bgcloudsHeight + 60);
+//         bgclouds.setAttribute('preserveAspectRatio', 'none');
+//     }
+// };
+// resizeBg();
+// addEvent(window, "resize", resizeBg);
 
 ////////// READY ///////////
 $(document).ready(function() {

@@ -32,13 +32,13 @@
     @include linear-gradient(top, shade(darken($skycolor, 5%),5%) 0%, tint($skycolor, 10%) 85%, $fallback:$skycolor);
     // background: $skycolor;
     // box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.1) inset;
-    padding-top: 12em;
-    @include media($sm-up) {
-        padding-top: 19em;
-    }
-    @include media($md-up) {
-        padding-top: 22em;
-    }
+    // padding-top: 12em;
+    // @include media($sm-up) {
+    //     padding-top: 19em;
+    // }
+    // @include media($md-up) {
+    //     padding-top: 22em;
+    // }
     overflow: hidden;
     position: relative;
     .container{
@@ -49,15 +49,29 @@
 }
 
 .intro{
-    color: shade(darken($skycolor, 2%),60%);
     color: #fff;
     // font-weight: 300;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-    font-size: em(26);
+
+    font-size: em(26); 
+
     margin-bottom: 3.5em;
+    margin-top: 7.25em;
+    @include media($sm-up) {
+        margin-top: 2.5em;
+        margin-bottom: 10em;
+        color: shade(darken($skycolor, 1%),40%);
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.1),
+        0px 0px 50px rgba(255,255,255,1);
+    }
     @include media($md-up) {
-        font-size: em(32);
-        margin-bottom: 4.5em;
+        
+        font-size: em(32); 
+        margin-bottom: 12em;
+        // margin-top: 3em;
+    }
+    @include media($lg-up) {
+
     }
       
     position: relative;
