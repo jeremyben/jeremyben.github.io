@@ -34,21 +34,19 @@ try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
 catch(e){window.attachEvent("onload", $buo_f)}
 
 //// fonctions utiles
-function addEvent(el, eventName, eventHandle) {
-    if (el == null || typeof(el) == 'undefined') return;
-    if (el.addEventListener) {
-        el.addEventListener(eventName, eventHandle, false);
-    } else if (el.attachEvent) {
-        el.attachEvent( "on" + eventName, eventHandle);
-    } else {
-        el["on" + eventName] = eventHandle;
-    }
-};
-
+// function addEvent(el, eventName, eventHandle) {
+//     if (el == null || typeof(el) == 'undefined') return;
+//     if (el.addEventListener) {
+//         el.addEventListener(eventName, eventHandle, false);
+//     } else if (el.attachEvent) {
+//         el.attachEvent( "on" + eventName, eventHandle);
+//     } else {
+//         el["on" + eventName] = eventHandle;
+//     }
+// };
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
 
 
 //// Contrôle taille, position et aspect des backgrounds svg selon viewport.
@@ -76,22 +74,25 @@ var year = new Date().getFullYear();
 $('#year').text(year);
 
 // nuages de fond
-var bgCloud = $('#patron').detach();
-for (var i = 0; i < 8; i++) {
-    bgCloud.clone().appendTo('.sky')
-    .addClass('bg-cloud-anim-'+ getRandomInt(2,6))
-    .css({
-        'display' : 'block',
-        'font-size' : getRandomInt(3,7) + 'px',
-        'top' : getRandomInt(24,79) + '0px',
-        'left' : getRandomInt(12,30) + '%'
-    });
-};
+(function(){
+    var bgCloud = $('#patron').detach();
+    for (var i = 0; i < 8; i++) {
+        bgCloud.clone().appendTo('.sky')
+        .addClass('bg-cloud-anim-'+ getRandomInt(2,6))
+        .css({
+            'display' : 'block',
+            'font-size' : getRandomInt(3,7) + 'px',
+            'top' : getRandomInt(24,79) + '0px',
+            'left' : getRandomInt(12,30) + '%'
+        });
+    };
+})();
+
 
 //// Scroll to portfolio
-$('#getPortfolio').on('click', function(event) {
-    event.preventDefault();
-    $('html, body').animate( { scrollTop: $('#portfolio').offset().top }, 700);
+$('#getPortfolio').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: $('#portfolio').offset().top }, 700);
   });
 
 //// Ouvre projet
@@ -99,7 +100,6 @@ $('.choice').on('click', function(event) {
     event.stopImmediatePropagation();
     var that = $(this);
     var parent = that.parent();
-    
     var isOpen = that.data('open');
     var siblings = that.siblings();
     var otherIsOpen = parent.prev().data('open');
@@ -189,8 +189,8 @@ $('#contact').on('click', function(e) {
 
 
 ////// Gestion envoi formulaire contact
-$('#contact-form').on('submit', function(event) {
-    event.preventDefault();
+$('#contact-form').on('submit', function(e) {
+    e.preventDefault();
     var that = $(this);
     // var btnWidth = that.find('[input type="submit"]').width();
     that.find('input[type="submit"]').prop('disabled', true);
@@ -262,22 +262,41 @@ $('#contact-form').on('submit', function(event) {
 
 ///////// iframe responsive experience
 
-// var allDoc = document.documentElement.innerHTML;
-// var allBody = document.body.innerHTML;
-// $('#responsive').on('click', function(e) {
-//     e.preventDefault();
-//     var frame = $('<iframe frameborder="0" style="width:60%; height:100%; overflow:hidden;">');
-//     $('body').css({'height': '100%', 'overflow': 'hidden', 'background': '#000'});
-//     $('html').css('height', '100%');
-//     document.body.innerHTML = "";
-//     frame.appendTo('body');
-//     setTimeout( function() {
-//         var idoc = frame[0].contentWindow.document;
-//         idoc.open();
-//         idoc.write(allDoc);
-//         idoc.close();
-//     }, 1 );  
-// });
+$('#responsive').on('click', function(e){
+    e.preventDefault();
+    var $body = $('body');
+    // var allBody = document.body.innerHTML;
+    var clouds = $('.cloud').filter('#patron').detach();
+    $('.plainmodal-overlay').remove();
+    var allDoc = document.documentElement.innerHTML;
+    var allBody = $body.html();
+    var frame = $('<iframe frameborder="0" style="width:100%; height:100%; overflow:hidden;">');
+    var figure = $('<span style="z-index:10;position:fixed;bottom:0;margin-left:-28px"><img style="max-width:none;" src="img/stickpush.svg"></span>');
+    $body.css({'height': '100%', 'overflow': 'hidden'});
+    $('html').css('height', '100%');
+    document.body.innerHTML = "";
+    frame.appendTo('body');
+    setTimeout(function(){
+        var idoc = frame[0].contentWindow.document;
+        idoc.open();
+        idoc.write(allDoc);
+        idoc.close();
+        figure.appendTo('body');
+        $body.css('background', 'url("img/circuit.svg") center right / auto 100% repeat-x fixed');
+    }, 1);
+    frame.animate({width: "400px"}, 3000, function(){
+        console.log(figure);
+        console.log(figure.find('img'));
+        figure.css('margin-left', 0).find('img').prop('src', 'img/stickstand.svg');
+        setTimeout(function(){
+            frame.animate({width: "100%"}, 3000, function(){
+                $('body').html(allBody).removeAttr('style');
+                $('html').removeAttr('style');
+                clouds.appendTo('.sky');
+            });
+        }, 400);
+    });
+});
 
 
 });

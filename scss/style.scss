@@ -43,6 +43,11 @@ body{
 }
 
 
+// .vmiddle-child{
+//     @extend %vmiddle_child;
+// }
+
+
 $ground : tint(#FFE2BF,45%);
 
 #bgclouds, #bgff {
@@ -95,16 +100,15 @@ $ground : tint(#FFE2BF,45%);
     
 }
 
-
 h2.enseigne{
     font-weight: 300;
     // font-family: $logo-font;
     color: $medium-gray;
     // color: darken($ground, 10);
-    // @include text3d($ground, 5, 2%);
-    // box-shadow: 0px -1px 2px transparentize(#FFC7A8, 0.3) inset;
+    // @include text3d(#ddd, 5, 2%);
+    box-shadow: 0px -1px 2px transparentize(#FFC7A8, 0.3) inset;
     // border-top: 1px solid shade($skycolor, 10);
-    // background-color: rgba(255,255,255,0.5);
+    // background-color: rgba(255,255,255,0.75);
     background-color: #fff;
     text-align: center;
     padding: em(20) 0;
@@ -123,6 +127,7 @@ h2.enseigne{
 
 }
 
+// Projets
 .choices{
     @include row();
 
@@ -193,12 +198,7 @@ h2.enseigne{
     };
 }
 
-
-
-.video{
-    @include videowrapper;
-}
-
+// Contenu projets
 .project{
     margin-top: 1.125em;
     color: $base-font-color;
@@ -216,6 +216,10 @@ h2.enseigne{
     }
 }
 
+.video{
+    @include videowrapper;
+}
+
 .poster{
     // margin-top: 2em;
     text-align: center;
@@ -231,9 +235,7 @@ h2.enseigne{
 }
 
 
-
-
-
+// footer
 footer{
     background-color: #fff;
     box-shadow: 0px 1px 2px transparentize(#FFC7A8, 0.2) inset;
@@ -241,16 +243,16 @@ footer{
     p{
         display: inline;
         margin: 0;
+        font-size: em(14);
         // display: inline-block;
         // padding-top: 0.1em;
-        line-height: 1.75;
-        color: darken(#ffe5c6,8%);
+        line-height: 2.25;
+        // color: darken(#ffe5c6,18%);
+        color: #aaa;
         // font-weight: 700;
     }
 
 }
-
-
 
 .linkedin{
     float: right;
@@ -263,3 +265,4 @@ footer{
         @include transform(scale(1.2));  
     };
 }
+

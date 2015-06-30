@@ -23,7 +23,7 @@ header.navigation {
     @include outer-container;
     position: relative;
     z-index: 99;
-    @include media($md-screen) {
+    @include media($md-up) {
       @include pad(0 default);
     }
   }
@@ -47,7 +47,6 @@ header.navigation {
     display: inline;
     margin: 0;
     padding: 0;
-
   }
 
   // The nav items
@@ -61,12 +60,11 @@ header.navigation {
     z-index: 99;
     display: inline;
 
-    a {
-      
+    a {      
       display: inline-block;
       font-weight: 400;
       // text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
-      @include media ($md-screen) {
+      @include media ($md-up) {
         padding-right: 1em;
       }
       color: $navigation-color;
@@ -81,7 +79,6 @@ header.navigation {
     padding-bottom: 3px;
   }
 
-
   // Elements on the far right
 
   .navigation-tools {
@@ -91,8 +88,7 @@ header.navigation {
     background: transparent;
     clear: none;
     float: right;
-
-    @include media($md-screen) {
+    @include media($md-up) {
       padding-left: $navigation-padding / 2;
       padding-right: $navigation-padding;
     }
@@ -106,29 +102,32 @@ header.navigation {
         color: $navigation-color-hover;
       }
     }
+  } 
 
-    a#contact {
-      font-size: 1em;
-      background-color: $yellow;
-      color: shade($yellow,60);
-      border-bottom-right-radius: $base-border-radius;
-      border-bottom-left-radius: $base-border-radius;
-      float: right;
-      @include hover {
-        color : #000;
-        background-color: tint($yellow,30);
-      }
-      &.disabled{
-        background-color: tint($skycolor,10%);
-        color:#fff;
-        border-bottom-right-radius: 50px;
-        border-bottom-left-radius: 50px;
-      }
-    }
+}
 
-
+a#contact {
+  font-size: 1em;
+  background-color: $yellow;
+  color: shade($yellow,60);
+  border-bottom-right-radius: $base-border-radius;
+  border-bottom-left-radius: $base-border-radius;
+  // float: right;
+  @include hover {
+    color : #000;
+    background-color: tint($yellow,30);
   }
+  &.disabled{
+    background-color: tint($skycolor,10%);
+    color:#fff;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+}
 
-  
 
+a#responsive{
+  @include media($sm-max) {
+    display: none;
+  }
 }

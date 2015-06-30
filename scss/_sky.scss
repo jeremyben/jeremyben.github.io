@@ -52,9 +52,7 @@
     color: #fff;
     // font-weight: 300;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-
     font-size: em(26); 
-
     margin-bottom: 3.5em;
     margin-top: 7.25em;
     @include media($sm-up) {
@@ -65,13 +63,12 @@
         0px 0px 50px rgba(255,255,255,1);
     }
     @include media($md-up) {
-        
         font-size: em(32); 
-        margin-bottom: 12em;
+        margin-bottom: 11em;
         // margin-top: 3em;
     }
     @include media($lg-up) {
-
+        margin-bottom: 12.5em;
     }
       
     position: relative;
@@ -80,13 +77,15 @@
     text-align: center;
 }
 
-
+// .sky *{
+// @include transition(all 0.75s ease-in-out);
+// }
 
 
 .cloud-wrapper{
     position: relative;
     z-index: 10;
-    @include transition(all 1s ease-in-out);
+    @include transition(all 0.75s ease-in-out);
     &:last-child{
         margin-bottom: 3.5em;
     }
