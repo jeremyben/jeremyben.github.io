@@ -12,24 +12,32 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Expletus+Sans&text=beng.' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/cool.min.js"></script>
 </head>
 <body>
-
 <header class="navigation" role="banner">
     <div class="navigation-wrapper">
         <nav role="navigation">
             <ul class="navigation-menu">
                 <li class="nav-link"><a id="getPortfolio" href="#portfolio">Portfolio</a></li>
+                <li class="nav-link"><a href="#" id="contact">Contact</a></li>
                 <!-- <li class="nav-link"><a href="#skills">Compétences</a></li> -->
             </ul>
         </nav>
         <div class="navigation-tools">
-            <!-- <a href="#" id="responsive">&#10045;</a> -->
-            <a href="#" id="contact">Laissez-moi un mot !</a>
+            <!-- <a href="#" id="responsive">&#10033;</a> -->
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax slice" id="sun">
+            <g fill="#FFF787">
+            <circle cx="150" cy="150" r="85.5"/>
+            <path d="M162.64 12.64c0 6.98-5.66 33.4-12.64 33.4s-12.64-26.42-12.64-33.4C137.36 5.66 143.02 0 150 0s12.64 5.66 12.64 12.64zM92.26 24.72c3.5 6.05 11.8 31.77 5.77 35.26-6.05 3.5-24.17-16.58-27.66-22.62C66.87 31.3 68.95 23.6 75 20.1c6.04-3.5 13.77-1.42 17.26 4.62zm-54.9 45.65c6.04 3.5 26.1 21.6 22.62 27.65-3.5 6.05-29.2-2.27-35.26-5.76-6.04-3.5-8.1-11.22-4.62-17.26 3.5-6.05 11.2-8.12 17.26-4.63zm-24.73 67c7 0 33.42 5.65 33.42 12.63 0 6.97-26.43 12.63-33.4 12.63-7 0-12.65-5.65-12.65-12.63s5.66-12.64 12.63-12.64zm12.1 70.37c6.03-3.5 31.76-11.8 35.25-5.77 3.48 6.05-16.58 24.16-22.62 27.65-6.05 3.5-13.78 1.42-17.27-4.62-3.5-6.05-1.5-13.77 4.6-17.26zm45.64 54.9c3.5-6.04 21.6-26.1 27.65-22.62 6.04 3.5-2.28 29.2-5.76 35.25-3.5 6.05-11.22 8.12-17.27 4.63-6.1-3.5-8.2-11.22-4.7-17.26zm67 24.72c0-6.98 5.64-33.4 12.63-33.4 6.97 0 12.63 26.43 12.63 33.4 0 6.98-5.66 12.64-12.64 12.64-7 0-12.7-5.66-12.7-12.64zm70.36-12.08c-3.5-6.05-11.8-31.77-5.76-35.26 6.04-3.48 24.16 16.58 27.65 22.62 3.5 6.04 1.4 13.77-4.63 17.27-6.1 3.5-13.8 1.5-17.3-4.6zm54.9-45.65c-6.04-3.5-26.1-21.6-22.6-27.65 3.5-6.05 29.2 2.27 35.24 5.76 6.04 3.5 8.12 11.22 4.63 17.26-3.5 6.05-11.22 8.1-17.26 4.63zm24.73-67c-6.98 0-33.42-5.65-33.42-12.63 0-6.97 26.44-12.64 33.4-12.64 7 0 12.66 5.66 12.66 12.64s-5.67 12.64-12.64 12.64zm-12.1-70.37c-6.03 3.5-31.75 11.8-35.24 5.77-3.48-6.04 16.58-24.17 22.62-27.65 6.04-3.5 13.77-1.42 17.27 4.62 3.5 6.05 1.5 13.78-4.6 17.26zm-45.64-54.9c-3.5 6.04-21.6 26.1-27.65 22.62-6.03-3.5 2.28-29.2 5.77-35.25 3.5-6.04 11.22-8.12 17.27-4.63 6.1 3.5 8.1 11.22 4.7 17.26z"/>
+            </g>
+            <text x="50%" y="55%" text-anchor="middle" alignment-baseline="central" font-size="50" font-weight="bold" fill="#fff">!</text>
+        </svg>
     </div>
 </header>
-
 <h1 class="name" id="benggText">ben<span>.</span><span>gg</span></h1>
 
 <div class="svg-container">
@@ -96,29 +104,22 @@
     </svg>
 </div>
 
-
-<section class="sky">
-    
+<section class="sky"> 
     <div class="intro">
         <p>Mon nom est Jérémy. Depuis&nbsp;2013, je&nbsp;suis</p>
     </div>
-
     <div class="container">
         <div class="cloud-wrapper">
             <div class="cloud">
                 <p>Développeur web <em class="text-ego">moderne !</em></p>
             </div>
         </div>
-    
-     
         <div class="cloud-wrapper">
             <div class="cloud">
                 <p>Créateur multimédia <em class="text-ego">passionné !</em></p>
             </div>
         </div>
-
         <div class="cloud-wrapper">
-            
             <div class="cloud">
                 <!-- <div class="cloud cloud-smaller">
                     <p>et</p>
@@ -128,94 +129,14 @@
                     <p>en école de multimédia et management</p>
                 </div>
             </div>
-            
         </div>
-   
     </div>
-
     <div class="cloud" id="patron"></div>
-
 </section>
 
-
 <section id="portfolio" class="portfolio">
-
-<div class="svg-container">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="455" viewBox="40 0 1200 455" preserveAspectRatio="none" id="bgff">
-      <linearGradient id="a" x1="640" x2="640" y1="154" y2="403" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#FFDAB7"/>
-        <stop offset=".61" stop-color="#FFD8B5"/>
-        <stop offset=".91" stop-color="#FFD0AF"/>
-        <stop offset="1" stop-color="#FFCCAB"/>
-      </linearGradient>
-      <path fill="url(#a)" d="M431 154h418v249H431z"/>
-      <linearGradient id="b" x1="533.38" x2="533.38" y1="79.33" y2="430" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-1 0 0 1 1592.885 0)">
-        <stop offset="0" stop-color="#FFDAB7"/>
-        <stop offset=".58" stop-color="#FFD8B5"/>
-        <stop offset=".88" stop-color="#FFD0AE"/>
-        <stop offset="1" stop-color="#FFCAA9"/>
-      </linearGradient>
-      <path fill="url(#b)" d="M839 393l441 37V79.33L839 167"/>
-      <linearGradient id="c" x1="220.5" x2="220.5" y1="79.43" y2="430" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#FFDAB7"/>
-        <stop offset=".58" stop-color="#FFD8B5"/>
-        <stop offset=".88" stop-color="#FFD0AE"/>
-        <stop offset="1" stop-color="#FFCAA9"/>
-      </linearGradient>
-      <path fill="url(#c)" d="M441 393L0 430V79.43L440 167"/>
-      <path fill="#FFCBA8" d="M440 155h399v24H440z"/>
-      <path fill="#FFC09F" d="M839 179H441l23.5 2h351"/>
-      <linearGradient id="d" x1="220.66" x2="220.66" y1="238.43" y2="141.75" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#FFDAB7"/>
-        <stop offset=".28" stop-color="#FFD5B3"/>
-        <stop offset="1" stop-color="#FFCBAD"/>
-      </linearGradient>
-      <path fill="url(#d)" d="M441.3 179L0 137.6V247"/>
-      <linearGradient id="e" x1="915.84" x2="915.84" y1="238.43" y2="141.75" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-1 0 0 1 1975.369 0)">
-        <stop offset="0" stop-color="#FFDAB7"/>
-        <stop offset=".28" stop-color="#FFD5B3"/>
-        <stop offset="1" stop-color="#FFCBAD"/>
-      </linearGradient>
-      <path fill="url(#e)" d="M839.06 179L1280 137.6V247"/>
-      <path fill="#FFC7A8" d="M976.72 407.1L1280 430v25l-303.3-29.5"/>
-      <path fill="#FFD3B6" d="M976 403.55L1280 422v8l-304-22.9"/>
-      <path fill="#FFC7A8" d="M839 393l137.66 14.1.22 18.23L839 404.53"/>
-      <path fill="#FFD3B6" d="M839 391l137.88 12.6-.22 3.5L839 393"/>
-      <linearGradient id="f" x1="10.64" x2="443.47" y1="42.31" y2="139.64" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#FFCEAC"/>
-        <stop offset="1" stop-color="#FFC9A7"/>
-      </linearGradient>
-      <path fill="url(#f)" d="M441 179L0 79.43V0l441 154.87"/>
-      <linearGradient id="g" x1="2.35" x2="440.25" y1="108.8" y2="162.47" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#FFC6A4"/>
-        <stop offset=".66" stop-color="#FFC09F"/>
-        <stop offset="1" stop-color="#FFBA9A"/>
-      </linearGradient>
-      <path fill="url(#g)" d="M0 137.6L379.66 179h61.37L0 79.43"/>
-      <linearGradient id="h" x1="499.53" x2="932.35" y1="42.31" y2="139.64" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-1 0 0 1 1768.885 0)">
-        <stop offset="0" stop-color="#FFCEAC"/>
-        <stop offset="1" stop-color="#FFC9A7"/>
-      </linearGradient>
-      <path fill="url(#h)" d="M839 179l441-99.67V0L839 154.87"/>
-      <linearGradient id="i" x1="491.23" x2="929.25" y1="108.75" y2="162.44" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-1 0 0 1 1768.885 0)">
-        <stop offset="0" stop-color="#FFC6A4"/>
-        <stop offset=".66" stop-color="#FFC09F"/>
-        <stop offset="1" stop-color="#FFBA9A"/>
-      </linearGradient>
-      <path fill="url(#i)" d="M1280 137.6L900.23 179h-61.37L1280 79.33"/>
-      <path fill="#FFC7A8" d="M303.23 407.1L0 430v25l303.28-29.5"/>
-      <path fill="#FFD3B6" d="M304 403.55L0 422v8l304-22.9"/>
-      <path fill="#FFC7A8" d="M441 393l-137.77 14.1-.23 18.23 138-20.83"/>
-      <path fill="#FFD3B6" d="M441 391l-138 12.6.23 3.5L441 393"/>
-      <path fill="#FFC7A8" d="M839 404.53l-398-.03V393h398"/>
-      <path fill="#FFD3B6" d="M441 391h398v2H441z"/>
-    </svg>
-</div>
-
+    <h2 class="enseigne">Mon Portfolio</h2>
     <div class="container">
-
-        <h2 class="enseigne">Mon <span>Portfolio</span></h2>
-    
         <div class="choices">
             <div class="choice" data-url="portfolio/myjobdating.html" data-open="false">
                 <span class="close-choice">&times;</span>
@@ -252,10 +173,8 @@
                 <strong class="type">Reportage photo</strong>
                 <h3>Le berceau du pastis</h3>
             </div>
-        </div>
-        
-    </div>
-    
+        </div>      
+    </div>  
 </section>
 
 <footer>
@@ -280,7 +199,5 @@
     </form>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script type="text/javascript" src="js/cool.min.js"></script>
 </body>
 </html>
