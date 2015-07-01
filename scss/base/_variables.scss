@@ -29,13 +29,11 @@ $brblue: #64baff;
 
 $yellow: #fff7b7;
 $yellow: #fff787;
-$yellow: #fffdc1;
-$yellow: #fffca8;
+// $yellow: #fffca8;
+// $yellow: #fffdc1;
 
 // $skycolor: tint($blue, 15%);
 $skycolor: darken($blue, 5%);
-$headercolor : $yellow;
-$headercolor : $dark-gray;
 $headercolor : #fff;
 
 // Font and background colors
@@ -43,7 +41,6 @@ $headercolor : #fff;
 $base-background-color: #fff;
 $base-font-color: $dark-gray;
 $action-color: shade(darken($skycolor, 5%),25%);
-
 
 
 // Border

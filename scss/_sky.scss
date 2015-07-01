@@ -12,10 +12,13 @@
     @include media($sm-up) {
         padding-top: 0.2em;
         font-size: 7em;
-        padding-bottom: 0.1em;
+        padding-bottom: 0em;
     } 
     @include media($md-up) {
-        font-size: 8.5em;
+        font-size: 9em;
+    }
+    @include media($lg-up) {
+        font-size: 10em;
     } 
     text-shadow: 1px 4px 6px #fff, 0 0 0 #000, 1px 4px 6px #fff;
     white-space: nowrap;
@@ -31,7 +34,7 @@
     
     @include linear-gradient(top, shade(darken($skycolor, 5%),5%) 0%, tint($skycolor, 10%) 85%, $fallback:$skycolor);
     // background: $skycolor;
-    // box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.1) inset;
+    // box-shadow: 0px -1px 2px rgba(0, 0, 0, .1) inset;
     // padding-top: 12em;
     // @include media($sm-up) {
     //     padding-top: 19em;
@@ -58,17 +61,17 @@
     @include media($sm-up) {
         margin-top: 2.5em;
         margin-bottom: 10em;
-        color: shade(darken($skycolor, 1%),40%);
+        color: shade(darken($skycolor, 1%),35%);
         text-shadow: 1px 1px 1px rgba(0,0,0,0.1),
         0px 0px 50px rgba(255,255,255,1);
     }
     @include media($md-up) {
-        font-size: em(32); 
+        font-size: em(30); 
         margin-bottom: 11em;
-        // margin-top: 3em;
+        margin-top: 2.25em;
     }
     @include media($lg-up) {
-        margin-bottom: 12.5em;
+        margin-bottom: 13em;
     }
       
     position: relative;
@@ -92,7 +95,6 @@
     margin-bottom: 7em;
     font-size: 0.9em;
     @include media($md-up) {
-        margin-bottom: 8em;
         @include span-columns(4);
         // @include omega(3n+2);
     }

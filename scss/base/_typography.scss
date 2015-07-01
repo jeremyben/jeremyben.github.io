@@ -89,5 +89,5 @@ picture {
   font-size: em(20);
 }
 
-::-moz-selection { background: $yellow; color: shade($yellow,100); text-shadow: none; }
-::selection { background: $yellow; color: shade($yellow,100); text-shadow: none; }
+::-moz-selection { background: $yellow; color: shade($yellow,65); text-shadow: none; }
+::selection { background: $yellow; color: shade($yellow,65); text-shadow: none; }

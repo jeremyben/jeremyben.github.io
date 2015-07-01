@@ -9,6 +9,10 @@
 // @import "helpers";
 @import "modal";
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     background: #fff;
     // @include linear-gradient(top, shade(darken($blue, 10%),10%) 0%, tint($blue, 15%) 75%, tint($blue, 15%) 100%, $fallback:tint($blue, 15%));
@@ -49,6 +53,7 @@ body{
 
 
 $ground : tint(#FFE2BF,45%);
+$ground-shadow : transparentize(darken(#FFC7A8,2), 0.25);
 
 #bgclouds, #bgff {
     width:100%;
@@ -81,7 +86,7 @@ $ground : tint(#FFE2BF,45%);
 
 
 .portfolio{
-    background-color: darken($ground,1);
+    background-color: darken($ground,6);
     background-image: url(../img/coolbg.svg);
     // background-color: tint(#8FD188,40%);
     // @include outer-container;
@@ -104,9 +109,8 @@ h2.enseigne{
     font-weight: 300;
     // font-family: $logo-font;
     color: $medium-gray;
-    // color: darken($ground, 10);
     // @include text3d(#ddd, 5, 2%);
-    box-shadow: 0px -1px 2px transparentize(#FFC7A8, 0.3) inset;
+    box-shadow: 0px -1px 2px $ground-shadow inset;
     // border-top: 1px solid shade($skycolor, 10);
     // background-color: rgba(255,255,255,0.75);
     background-color: #fff;
@@ -190,7 +194,7 @@ h2.enseigne{
     display:none;
     float: right;
     cursor:pointer;
-    font-size:1.25em;
+    font-size:1.5em;
     @include transition(transform 0.1s ease-out);
     @include hover {
         color: #000;
@@ -238,7 +242,7 @@ h2.enseigne{
 // footer
 footer{
     background-color: #fff;
-    box-shadow: 0px 1px 2px transparentize(#FFC7A8, 0.2) inset;
+    box-shadow: 0px 1px 2px $ground-shadow inset;
     padding: 0.9em 0;
     p{
         display: inline;
@@ -257,7 +261,8 @@ footer{
 .linkedin{
     float: right;
     img{
-        max-width: 1.75em;
+        max-width: 1.85em;
+        max-height: 1.85em;
         vertical-align: middle;
     }
     @include transition(transform 0.12s ease-out);
