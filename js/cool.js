@@ -13,7 +13,7 @@ function $buo_f(){
 try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
 catch(e){window.attachEvent("onload", $buo_f)}
 
-/// serialize to json
+// serialize to json
 $.fn.serializeObject = function() {
   var o = {};
   var a = this.serializeArray();
@@ -30,30 +30,19 @@ $.fn.serializeObject = function() {
   return o;
 };
 
-//// fonctions utiles
-function addEvent(el, eventName, eventHandle) {
-  if (el === null || typeof(el) == 'undefined') return;
-  if (el.addEventListener) {
-    el.addEventListener(eventName, eventHandle, false);
-  } else if (el.attachEvent) {
-    el.attachEvent( "on" + eventName, eventHandle);
-  } else {
-    el["on" + eventName] = eventHandle;
-  }
-};
+// Randomizer
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
 $(document).ready(function() {
 
-//// Maintient nuages pour écrans > 1920px
-var bgclouds = document.getElementById("bgclouds");
-var bgcloudsWidth = parseInt(bgclouds.getAttribute('width').replace('px', ''), 10);
-var bgcloudsHeight = parseInt(bgclouds.getAttribute('height').replace('px', ''), 10);
-var bgcloudsHeightHD = Math.floor(bgcloudsHeight * 1920 / bgcloudsWidth);
-function resizeBgHD(){
+// Maintient nuages pour écrans > 1920px
+(function(){
+  var bgclouds = document.getElementById("bgclouds");
+  var bgcloudsWidth = parseInt(bgclouds.getAttribute('width').replace('px', ''), 10);
+  var bgcloudsHeight = parseInt(bgclouds.getAttribute('height').replace('px', ''), 10);
+  var bgcloudsHeightHD = Math.floor(bgcloudsHeight * 1920 / bgcloudsWidth);
   if (window.innerWidth > 1920){
     bgclouds.setAttribute('preserveAspectRatio', 'none');
     bgclouds.setAttribute('height', bgcloudsHeightHD);
@@ -61,26 +50,25 @@ function resizeBgHD(){
     bgclouds.setAttribute('preserveAspectRatio', 'xMaxYMin slice');
     bgclouds.setAttribute('height', bgcloudsHeight);
   }
-};
-resizeBgHD();
-// addEvent(window, "resize", resizeBgHD);
-
-// Année en cours
-var year = new Date().getFullYear();
-$('#year').text(year);
+})()
 
 // nuages de fond
-var bgCloud = $('#patron').detach();
+var smallCloud = $('#patron').detach();
 for (var i = 0; i < 10; i++) {
-  bgCloud.clone().appendTo('.sky')
-  .addClass('cloud-clone bg-cloud-anim-'+ getRandomInt(2,6))
-  .css({
-    'display' : 'block',
-    'font-size' : getRandomInt(3,7) + 'px',
-    'top' : getRandomInt(24,75) + '0px',
-    'left' : getRandomInt(12,30) + '%'
-  });
-};
+  smallCloud
+    .clone()
+    .appendTo('.sky')
+    .addClass('cloud-clone bg-cloud-anim-'+ getRandomInt(2,6))
+    .css({
+      'display' : 'block',
+      'font-size' : getRandomInt(3,7) + 'px',
+      'top' : getRandomInt(24,75) + '0px',
+      'left' : getRandomInt(12,30) + '%'
+    });
+}
+
+// Current year
+$('#year').text(new Date().getFullYear());
 
 //// Scroll to portfolio
 $('#getPortfolio').on('click', function(e) {
@@ -136,6 +124,7 @@ $('.choice').on('click', function(event) {
   }
 });
 
+// Ferme projet
 $('.close-choice').on('click', function(event){
     event.stopImmediatePropagation();
     var that = $(this);
@@ -152,17 +141,19 @@ $('.close-choice').on('click', function(event){
 
 
 // modal contact
-var modal = $('#contact-modal').plainModal({
+(function(){
+  var modal = $('#contact-modal').plainModal({
     duration: 400,
     overlay: {fillColor: '#b0dcff', opacity: 0.5},
     effect: {open: $.fn.slideDown, close: $.fn.slideUp}
-});
-$('#contact').on('click', function(e) {
-    e.preventDefault();
-    modal.plainModal('open');
-});
+  });
+  $('#contact').on('click', function(e) {
+      e.preventDefault();
+      modal.plainModal('open');
+  });
+})()
 
-////// Gestion envoi formulaire contact
+// Gestion envoi formulaire contact
 $('#contact-form').on('submit', function(e) {
     e.preventDefault();
     var that = $(this);
@@ -236,7 +227,7 @@ $('#sun').on('click', function(e){
             frame.animate({width: "100%"}, 3000, function(){
                 $('body').html(allBody).removeAttr('style').removeClass('transition');
                 $('html').removeAttr('style');
-                bgCloud.appendTo('.sky');
+                smallCloud.appendTo('.sky');
                 $.getScript('js/cool.js');
             });
         }, 400);
