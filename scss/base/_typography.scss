@@ -27,9 +27,7 @@ h6 {
   h#{$i}, .h#{$i} {
     // $modular-heading-size : ceil(modular-scale((6 - $i), $em-base));
     // font-size: em($modular-heading-size);
-
     font-size: modular-scale((5 - $i), 0.8em, $perfect-fifth);
-    
     // line-height: $base-line-height / strip-units($modular-h-size);
     // line-height: strip-units($modpx * $base-line-height / 100);
   }

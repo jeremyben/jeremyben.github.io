@@ -2,6 +2,8 @@
   @include transform-style(preserve-3d);
 }
 %vmiddle_child{
+  margin-bottom: 0;
+  margin-top: 0;
   position: relative;
   top: 50%;
   @include transform(translateY(-50%));
@@ -13,20 +15,24 @@
 //   @extend vmiddle(child)
 // }
 @mixin vmiddle($child : 'p') {
-    @include transform-style(preserve-3d);
-    @if $child == (p or span or div or h1 or h2 or h3 or h4 or h5 or h6 or strong or em or i){
-        #{$child} {
-          position: relative;
-          top: 50%;
-          @include transform(translateY(-50%));
-        }
-    } @else {
-        .#{$child} {
-          position: relative;
-          top: 50%;
-          @include transform(translateY(-50%));
-        } 
+  @include transform-style(preserve-3d);
+  @if $child == (p or span or div or h1 or h2 or h3 or h4 or h5 or h6 or strong or em or i){
+    #{$child} {
+      margin-bottom: 0;
+      margin-top: 0;
+      position: relative;
+      top: 50%;
+      @include transform(translateY(-50%));
     }
+  } @else {
+    .#{$child} {
+      margin-bottom: 0;
+      margin-top: 0;
+      position: relative;
+      top: 50%;
+      @include transform(translateY(-50%));
+    } 
+  }
 }
 
 // HOVER
